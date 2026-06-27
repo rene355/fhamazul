@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Huur een Starlink Mini voor vakantie, camper, boot, remote werk of events. Unlimited data in 40+ Europese landen, inclusief 12V adapter en compleet plug & play pakket.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Starlink Mini huren voor snel internet onderweg">
+<meta property="og:description" content="Razendsnel satellietinternet voor camping, boot, vakantiehuis en remote werk. Vanaf €89 per week, inclusief Europees netwerk en unlimited data.">
+<meta property="og:type" content="website">
+<title>Starlink Mini huren | Satellietinternet voor vakantie, camper en boot</title>
+<style>
+  :root {
+    --black: #000000;
+    --white: #ffffff;
+    --gray-100: #f5f5f5;
+    --gray-200: #e8e8e8;
+    --gray-400: #999999;
+    --gray-600: #555555;
+    --gray-800: #222222;
+    --signal: #00d4ff;
+    --signal-dim: rgba(0,212,255,0.13);
+    --radius: 12px;
+    --radius-sm: 6px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  a, button, input, select { -webkit-tap-highlight-color: transparent; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+    outline: 2px solid var(--signal);
+    outline-offset: 3px;
+  }
+  .skip-link {
+    position: fixed; left: 12px; top: 10px; z-index: 1000;
+    background: var(--signal); color: var(--black);
+    padding: 9px 14px; border-radius: var(--radius-sm);
+    font-size: 13px; font-weight: 800; text-decoration: none;
+    transform: translateY(-140%);
+  }
+  .skip-link:focus { transform: translateY(0); }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(0,0,0,0.88);
+    backdrop-filter: blur(14px);
+    border-bottom: 0.5px solid rgba(255,255,255,0.09);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo {
+    font-size: 17px; font-weight: 800; letter-spacing: -0.5px;
+    color: var(--white); text-decoration: none;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .nav-logo .sig { color: var(--signal); }
+  .nav-links { display: flex; gap: 26px; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.65); text-decoration: none;
+    font-size: 14px; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: var(--white); color: var(--black);
+    padding: 8px 20px; border-radius: 20px;
+    text-decoration: none; font-size: 14px; font-weight: 700;
+    transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+  .ham { display: none; background: none; border: none; color: white; font-size: 22px; cursor: pointer; }
+  .mobile-nav {
+    display: none; position: fixed; top: 60px; left: 0; right: 0; z-index: 99;
+    background: rgba(0,0,0,0.97); padding: 20px 5%; flex-direction: column; gap: 16px;
+    border-bottom: 0.5px solid rgba(255,255,255,0.1);
+  }
+  .mobile-nav a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 16px; }
+  .mobile-nav.open { display: flex; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 100px 5% 60px;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 80% 55% at 50% 25%, rgba(0,212,255,0.09) 0%, transparent 70%),
+      radial-gradient(ellipse 35% 35% at 82% 78%, rgba(0,212,255,0.05) 0%, transparent 60%);
+  }
+  .stars {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      radial-gradient(1px 1px at 8% 12%, rgba(255,255,255,0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 22% 28%, rgba(255,255,255,0.45) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 47% 8%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 66% 18%, rgba(255,255,255,0.35) 0%, transparent 100%),
+      radial-gradient(1px 1px at 83% 32%, rgba(255,255,255,0.55) 0%, transparent 100%),
+      radial-gradient(1px 1px at 18% 52%, rgba(255,255,255,0.35) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 59% 62%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 91% 68%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 38% 78%, rgba(255,255,255,0.55) 0%, transparent 100%),
+      radial-gradient(1px 1px at 74% 83%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 4% 88%, rgba(255,255,255,0.35) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 53% 43%, rgba(255,255,255,0.55) 0%, transparent 100%),
+      radial-gradient(1px 1px at 13% 38%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 96% 14%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 31% 61%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 77% 47%, rgba(255,255,255,0.4) 0%, transparent 100%);
+  }
+  .orbit-ring {
+    position: absolute; border-radius: 50%;
+    border: 0.5px solid rgba(0,212,255,0.07);
+    z-index: 0; pointer-events: none;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 840px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--signal);
+    border: 1px solid rgba(0,212,255,0.35);
+    padding: 5px 16px; border-radius: 20px; margin-bottom: 28px;
+    background: rgba(0,212,255,0.06);
+  }
+  .pulse {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--signal);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity:1; transform:scale(1); }
+    50% { opacity:0.4; transform:scale(0.7); }
+  }
+  h1.hero-title {
+    font-size: clamp(36px, 6.5vw, 80px);
+    font-weight: 800; letter-spacing: -2.5px; line-height: 1.03;
+    margin-bottom: 24px;
+  }
+  h1.hero-title em { color: var(--signal); font-style: normal; }
+  .hero-sub {
+    font-size: clamp(16px, 2vw, 20px);
+    color: rgba(255,255,255,0.6);
+    max-width: 580px; margin: 0 auto 16px; line-height: 1.65;
+  }
+  .speed-tag {
+    display: inline-block; font-size: 13px; font-weight: 700;
+    color: var(--signal); margin-bottom: 36px;
+    letter-spacing: 0.02em;
+  }
+  .hero-buttons {
+    display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 52px;
+  }
+  .btn-primary {
+    background: var(--white); color: var(--black);
+    padding: 14px 34px; border-radius: 28px;
+    text-decoration: none; font-size: 15px; font-weight: 800;
+    transition: transform 0.2s, opacity 0.2s; display: inline-block;
+  }
+  .btn-primary:hover { transform: translateY(-2px); opacity: 0.9; }
+  .btn-ghost {
+    background: transparent; color: var(--white);
+    padding: 14px 34px; border-radius: 28px;
+    text-decoration: none; font-size: 15px; font-weight: 600;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    transition: border-color 0.2s, background 0.2s; display: inline-block;
+  }
+  .btn-ghost:hover { border-color: white; background: rgba(255,255,255,0.05); }
+  .trust-strip {
+    display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;
+    margin: -24px 0 40px;
+  }
+  .trust-pill {
+    border: 0.5px solid rgba(255,255,255,0.11);
+    background: rgba(255,255,255,0.035);
+    border-radius: 999px;
+    padding: 7px 13px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.62);
+  }
+  .hero-stats {
+    display: flex; gap: 44px; justify-content: center; flex-wrap: wrap;
+    border-top: 0.5px solid rgba(255,255,255,0.09); padding-top: 36px;
+  }
+  .stat { text-align: center; }
+  .stat-num { font-size: 30px; font-weight: 800; letter-spacing: -1px; }
+  .stat-num .sig { color: var(--signal); }
+  .stat-label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.09em; margin-top: 3px; }
+
+  /* SECTION SHELL */
+  section { padding: 96px 5%; }
+  .inner { max-width: 1100px; margin: 0 auto; }
+  .s-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--signal); margin-bottom: 10px; }
+  .s-title { font-size: clamp(28px, 4vw, 48px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.08; margin-bottom: 14px; }
+  .s-sub { font-size: 17px; color: rgba(255,255,255,0.5); max-width: 540px; line-height: 1.65; margin-bottom: 52px; }
+
+  /* FOR WHO */
+  #forwie { background: #050505; }
+  .use-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+  .use-card {
+    background: #0d0d0d; border: 0.5px solid rgba(255,255,255,0.07);
+    border-radius: var(--radius); padding: 30px 26px;
+    transition: border-color 0.3s, transform 0.25s;
+  }
+  .use-card:hover { border-color: rgba(0,212,255,0.3); transform: translateY(-3px); }
+  .use-icon { font-size: 36px; margin-bottom: 14px; display: block; }
+  .use-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+  .use-card p { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.65; }
+  .speed-line { font-size: 12px; color: var(--signal); font-weight: 700; margin-top: 10px; }
+
+  /* HOW */
+  #hoe { background: var(--black); }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .step {
+    padding: 30px 26px;
+    border-left: 0.5px solid rgba(255,255,255,0.07);
+  }
+  .step:first-child { border-left: none; }
+  .step-num { font-size: 46px; font-weight: 800; color: rgba(0,212,255,0.14); letter-spacing: -2px; line-height: 1; margin-bottom: 14px; }
+  .step h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .step p { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.65; }
+
+  /* KIT */
+  #kit { background: #050505; }
+  .kit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 16px; margin-bottom: 40px; }
+  .kit-item {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: #0d0d0d; border: 0.5px solid rgba(255,255,255,0.07);
+    border-radius: var(--radius-sm); padding: 20px;
+  }
+  .kit-icon { font-size: 26px; flex-shrink: 0; }
+  .kit-item h4 { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+  .kit-item p { font-size: 13px; color: rgba(255,255,255,0.42); }
+  .badge-usp {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    background: var(--signal-dim); color: var(--signal);
+    padding: 2px 8px; border-radius: 10px; margin-left: 5px;
+    letter-spacing: 0.05em; vertical-align: middle;
+  }
+  .kit-banner {
+    background: #0a0a0a; border: 0.5px solid rgba(0,212,255,0.18);
+    border-radius: var(--radius); padding: 22px 26px;
+    display: flex; gap: 18px; align-items: center; flex-wrap: wrap;
+  }
+  .kit-banner-icon { font-size: 30px; flex-shrink: 0; }
+  .kit-banner h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .kit-banner p { font-size: 13px; color: rgba(255,255,255,0.45); }
+
+  /* PRICING */
+  #tarieven { background: var(--black); }
+  .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 14px; margin-bottom: 28px; }
+  .price-card {
+    background: #0d0d0d; border: 0.5px solid rgba(255,255,255,0.09);
+    border-radius: var(--radius); padding: 26px 22px; text-align: center;
+    transition: border-color 0.25s, transform 0.22s;
+  }
+  .price-card:hover { border-color: rgba(0,212,255,0.35); transform: translateY(-2px); }
+  .price-card.pop { border-color: var(--signal); background: #071b20; }
+  .pop-badge {
+    font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--black); background: var(--signal);
+    padding: 3px 10px; border-radius: 10px; margin-bottom: 10px; display: inline-block;
+  }
+  .p-label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+  .p-amount { font-size: 38px; font-weight: 800; letter-spacing: -2px; margin-bottom: 3px; }
+  .p-days { font-size: 12px; color: rgba(255,255,255,0.35); margin-bottom: 12px; }
+  .p-day { font-size: 13px; color: var(--signal); font-weight: 700; }
+  .price-footer {
+    display: flex; gap: 18px; flex-wrap: wrap;
+    background: #090909; border: 0.5px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius-sm); padding: 18px 22px;
+    font-size: 14px; color: rgba(255,255,255,0.55);
+  }
+  .price-footer strong { color: var(--white); }
+  .speed-block {
+    display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 32px;
+  }
+  .speed-pill {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(0,212,255,0.07); border: 0.5px solid rgba(0,212,255,0.2);
+    border-radius: 20px; padding: 8px 18px; font-size: 14px; font-weight: 700; color: var(--signal);
+  }
+
+  /* BOOKING */
+  #reserveer { background: #050505; }
+  .book-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+
+  /* Calendar */
+  .cal-box {
+    background: #0d0d0d; border: 0.5px solid rgba(255,255,255,0.09);
+    border-radius: var(--radius); overflow: hidden;
+  }
+  .cal-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px; border-bottom: 0.5px solid rgba(255,255,255,0.07);
+  }
+  .cal-month-lbl { font-size: 15px; font-weight: 700; }
+  .cal-nav button {
+    background: none; border: 0.5px solid rgba(255,255,255,0.14);
+    color: white; width: 30px; height: 30px; border-radius: 50%;
+    cursor: pointer; font-size: 14px; transition: background 0.2s;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .cal-nav button:hover { background: rgba(255,255,255,0.09); }
+  .cal-grid { display: grid; grid-template-columns: repeat(7,1fr); padding: 8px; gap: 2px; }
+  .cal-dh { text-align: center; font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.3); padding: 6px 0; letter-spacing: 0.05em; }
+  .cal-d {
+    aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+    font-size: 13px; border-radius: 6px; cursor: pointer; user-select: none;
+    transition: background 0.14s, color 0.14s;
+    border: 0; background: transparent; color: inherit; font-family: inherit;
+  }
+  .cal-d:hover:not(.blocked):not(.past):not(.empty) { background: rgba(0,212,255,0.13); color: var(--signal); }
+  .cal-d.today { font-weight: 800; color: var(--signal); }
+  .cal-d.blocked { background: rgba(255,70,70,0.1); color: rgba(255,80,80,0.5); cursor: not-allowed; text-decoration: line-through; }
+  .cal-d.selected { background: var(--signal); color: #000; font-weight: 800; border-radius: 8px; }
+  .cal-d.in-range { background: rgba(0,212,255,0.09); }
+  .cal-d.past { color: rgba(255,255,255,0.18); cursor: not-allowed; }
+  .cal-d.empty { cursor: default; }
+  .cal-legend {
+    display: flex; gap: 18px; padding: 12px 18px;
+    border-top: 0.5px solid rgba(255,255,255,0.06);
+    font-size: 11px; color: rgba(255,255,255,0.35);
+  }
+  .ldot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 5px; vertical-align: middle; }
+  .ldot-a { background: var(--signal); }
+  .ldot-b { background: rgba(255,80,80,0.6); }
+
+  /* Admin */
+  .admin-btn {
+    margin-top: 10px; font-size: 11px; color: rgba(255,255,255,0.25);
+    background: none; border: none; cursor: pointer; text-decoration: underline;
+    font-family: inherit;
+  }
+  .admin-panel {
+    display: none; margin-top: 14px;
+    background: #111; border: 0.5px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-sm); padding: 18px;
+  }
+  .admin-panel.open { display: block; }
+  .admin-panel h4 { font-size: 12px; font-weight: 700; color: var(--signal); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .admin-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+  .admin-row input {
+    background: #1c1c1c; border: 0.5px solid rgba(255,255,255,0.12);
+    color: white; padding: 7px 11px; border-radius: var(--radius-sm);
+    font-size: 13px; outline: none; font-family: inherit;
+  }
+  .admin-row input:focus { border-color: var(--signal); }
+  .btn-add { background: var(--signal); color: #000; border: none; padding: 7px 14px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 700; cursor: pointer; }
+  .blist { list-style: none; font-size: 12px; color: rgba(255,255,255,0.4); }
+  .blist li { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 0.5px solid rgba(255,255,255,0.05); }
+  .btn-del { background: rgba(255,70,70,0.12); color: rgba(255,80,80,0.8); border: 0.5px solid rgba(255,70,70,0.25); padding: 3px 9px; border-radius: 4px; font-size: 11px; cursor: pointer; }
+  .cal-status { padding: 9px 18px 0; font-size: 11px; color: rgba(255,255,255,0.5); }
+  .cal-status.error { color: #ff9a9a; }
+  .admin-login { display: grid; gap: 9px; }
+  .admin-login input { width: 100%; }
+  .admin-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .admin-message { min-height: 18px; margin: 6px 0; font-size: 12px; color: rgba(255,255,255,0.55); }
+  .admin-message.error { color: #ff9a9a; }
+  .admin-user { font-size: 11px; color: rgba(255,255,255,0.45); }
+  .btn-logout { border: 0; background: none; color: rgba(255,255,255,0.5); text-decoration: underline; cursor: pointer; }
+  .hidden { display: none !important; }
+  .auth-setup {
+    position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center;
+    padding: 20px; background: rgba(0,0,0,0.82);
+  }
+  .auth-setup-box {
+    width: min(440px,100%); padding: 24px; background: #111;
+    border: 1px solid rgba(255,255,255,0.14); border-radius: var(--radius-sm);
+  }
+  .auth-setup-box h2 { margin-bottom: 8px; font-size: 22px; }
+  .auth-setup-box p { margin-bottom: 16px; color: rgba(255,255,255,0.6); font-size: 14px; }
+  .auth-setup-box input {
+    width: 100%; margin-bottom: 10px; padding: 11px 14px; color: white;
+    background: #1c1c1c; border: 1px solid rgba(255,255,255,0.14); border-radius: var(--radius-sm);
+  }
+
+  /* Form */
+  .form-wrap { display: flex; flex-direction: column; gap: 14px; }
+  .ff label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(255,255,255,0.4); margin-bottom: 5px; }
+  .ff input, .ff select {
+    width: 100%; background: #0d0d0d;
+    border: 0.5px solid rgba(255,255,255,0.13);
+    color: white; padding: 11px 15px;
+    border-radius: var(--radius-sm); font-size: 15px; outline: none;
+    transition: border-color 0.2s; font-family: inherit;
+  }
+  .ff input:focus { border-color: var(--signal); }
+  .ff input:invalid:not(:placeholder-shown) { border-color: rgba(255,80,80,0.65); }
+  .ff select { cursor: pointer; }
+  .ff select option { background: #111; }
+  .form-summary {
+    background: rgba(0,212,255,0.05); border: 0.5px solid rgba(0,212,255,0.2);
+    border-radius: var(--radius-sm); padding: 14px 16px;
+    font-size: 14px; color: rgba(255,255,255,0.75); min-height: 56px; line-height: 1.7;
+  }
+  .form-note { font-size: 12px; color: rgba(255,255,255,0.28); line-height: 1.55; }
+  .btn-reserveer {
+    width: 100%; background: var(--white); color: var(--black);
+    border: none; padding: 15px; border-radius: 28px;
+    font-size: 16px; font-weight: 800; cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s; font-family: inherit;
+  }
+  .btn-reserveer:hover { opacity: 0.87; transform: translateY(-1px); }
+  .success { display: none; text-align: center; padding: 22px; color: var(--signal); font-size: 16px; font-weight: 700; }
+  .success a { color: var(--signal); font-weight: 800; }
+  .sticky-cta {
+    display: none;
+    position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 95;
+    background: var(--white); color: var(--black);
+    text-align: center; text-decoration: none; font-size: 15px; font-weight: 800;
+    padding: 13px 16px; border-radius: 999px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.36);
+  }
+
+  /* FAQ */
+  #faq { background: var(--black); }
+  .faq-wrap { max-width: 700px; }
+  .faq-item { border-bottom: 0.5px solid rgba(255,255,255,0.07); }
+  .faq-q {
+    width: 100%; text-align: left; background: none; border: none;
+    color: white; font-size: 15px; font-weight: 700; padding: 18px 0;
+    cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+    font-family: inherit; gap: 12px;
+  }
+  .faq-q .arr { font-size: 20px; color: var(--signal); transition: transform 0.22s; flex-shrink: 0; }
+  .faq-q.open .arr { transform: rotate(45deg); }
+  .faq-a { display: none; font-size: 14px; color: rgba(255,255,255,0.5); padding-bottom: 18px; line-height: 1.72; }
+  .faq-a.open { display: block; }
+
+  /* FOOTER */
+  footer {
+    background: #040404; border-top: 0.5px solid rgba(255,255,255,0.07);
+    padding: 44px 5%; text-align: center;
+  }
+  .f-logo { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 10px; }
+  .f-logo .sig { color: var(--signal); }
+  .f-links { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
+  .f-links a { color: rgba(255,255,255,0.35); font-size: 13px; text-decoration: none; }
+  .f-links a:hover { color: white; }
+  .f-copy { font-size: 11px; color: rgba(255,255,255,0.18); }
+
+  /* RESPONSIVE */
+  @media (max-width: 780px) {
+    .nav-links { display: none; }
+    .ham { display: block; }
+    .book-wrap { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; }
+    .step { border-left: none; border-top: 0.5px solid rgba(255,255,255,0.07); }
+    .step:first-child { border-top: none; }
+    .hero-stats { gap: 28px; }
+    #hero { min-height: 92vh; padding-top: 88px; }
+    h1.hero-title { letter-spacing: -1.5px; }
+    section { padding: 72px 5%; }
+    .nav-cta { display: none; }
+    .sticky-cta { display: block; }
+    .price-grid { grid-template-columns: 1fr; }
+    .speed-block { gap: 10px; }
+    .speed-pill { width: 100%; justify-content: center; }
+    .cal-legend { justify-content: center; flex-wrap: wrap; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Starlink Mini Op Pad",
+  "areaServed": "Europa",
+  "description": "Starlink Mini verhuur voor vakantie, camper, boot, events en remote werken.",
+  "priceRange": "Vanaf €89 per week",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Almere",
+    "addressCountry": "NL"
+  }
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#reserveer">Direct naar reserveren</a>
+
+<!-- NAV -->
+<nav aria-label="Hoofdnavigatie">
+  <a href="#hero" class="nav-logo">STARLINK<span class="sig">MINI</span> &nbsp;·&nbsp; Op Pad</a>
+  <ul class="nav-links">
+    <li><a href="#forwie">Voor wie</a></li>
+    <li><a href="#hoe">Hoe werkt het</a></li>
+    <li><a href="#kit">Wat zit erin</a></li>
+    <li><a href="#tarieven">Tarieven</a></li>
+    <li><a href="#reserveer">Reserveren</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#reserveer" class="nav-cta">Reserveer nu</a>
+  <button class="ham" type="button" aria-label="Menu openen" aria-controls="mobileNav" aria-expanded="false" onclick="toggleMobileNav()">☰</button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#forwie" onclick="closeMobileNav()">Voor wie</a>
+  <a href="#hoe" onclick="closeMobileNav()">Hoe werkt het</a>
+  <a href="#kit" onclick="closeMobileNav()">Wat zit erin</a>
+  <a href="#tarieven" onclick="closeMobileNav()">Tarieven</a>
+  <a href="#reserveer" onclick="closeMobileNav()">Reserveren</a>
+  <a href="#faq" onclick="closeMobileNav()">FAQ</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="stars"></div>
+  <div class="orbit-ring" style="width:600px;height:600px;"></div>
+  <div class="orbit-ring" style="width:900px;height:900px;"></div>
+  <div class="orbit-ring" style="width:1200px;height:1200px;"></div>
+
+  <div class="hero-content">
+    <div class="eyebrow"><span class="pulse"></span> Satellietinternet · Heel Europa · Tot 300+ Mbps</div>
+    <h1 class="hero-title">
+      Jouw signaal.<br>Waar je ook <em>naartoe gaat.</em>
+    </h1>
+    <p class="hero-sub">
+      Geen trage campingwifi. Geen duur roaming. Geen gedoe. Neem onze Starlink Mini mee en geniet van razendsnel, betrouwbaar internet — op de camping, het water of hoog in de bergen.
+    </p>
+    <div class="speed-tag">⚡ Tot 300+ Mbps · Unlimited · 40+ landen</div>
+    <div class="hero-buttons">
+      <a href="#reserveer" class="btn-primary">Reserveer jouw set →</a>
+      <a href="#tarieven" class="btn-ghost">Bekijk tarieven</a>
+    </div>
+    <div class="trust-strip" aria-label="Belangrijkste voordelen">
+      <span class="trust-pill">Compleet pakket</span>
+      <span class="trust-pill">Ophalen in Almere</span>
+      <span class="trust-pill">Bezorging mogelijk</span>
+      <span class="trust-pill">Borg retour na inlevering</span>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">300<span class="sig">+</span></div><div class="stat-label">Mbps download</div></div>
+      <div class="stat"><div class="stat-num"><span class="sig">∞</span></div><div class="stat-label">Unlimited data</div></div>
+      <div class="stat"><div class="stat-num">40<span class="sig">+</span></div><div class="stat-label">Landen Europa</div></div>
+      <div class="stat"><div class="stat-num">€89</div><div class="stat-label">Vanaf 1 week</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHO -->
+<section id="forwie">
+  <div class="inner">
+    <div class="s-tag">Voor wie</div>
+    <h2 class="s-title">Jouw avontuur,<br>jouw internet</h2>
+    <p class="s-sub">Of je nu wild kampeert, de golven pakt of vanuit een berghut werkt — Starlink Mini gaat gewoon mee.</p>
+    <div class="use-grid">
+      <div class="use-card">
+        <span class="use-icon">🏕️</span>
+        <h3>Kamperen & camper</h3>
+        <p>Geen trage campingwifi meer. Stream, videobel en werk alsof je thuis zit — midden in de natuur.</p>
+        <div class="speed-line">⚡ Tot 300+ Mbps · plug & play</div>
+      </div>
+      <div class="use-card">
+        <span class="use-icon">⛵</span>
+        <h3>Watersport & zeilen</h3>
+        <p>Binnenwater, langs de kust (tot 12 zeemijlen) of op de Middellandse Zee — verbonden op het water. Navigeer, communiceer en geniet zonder blinde vlekken.</p>
+        <div class="speed-line">⚡ Tot 300+ Mbps · ook op 12V</div>
+      </div>
+      <div class="use-card">
+        <span class="use-icon">🎒</span>
+        <h3>Backpacken</h3>
+        <p>Compact, licht, past in elke rugzak. Snel signaal in afgelegen gebieden — van de Alpen tot de Spaanse hinterland.</p>
+        <div class="speed-line">⚡ Tot 300+ Mbps · overal</div>
+      </div>
+      <div class="use-card">
+        <span class="use-icon">🏡</span>
+        <h3>Vakantiehuizen</h3>
+        <p>Afgelegen huisje met slecht wifi? Zet de schotel neer, kabel erin — binnen 2 minuten razendsnel internet voor het hele gezin.</p>
+        <div class="speed-line">⚡ Tot 300+ Mbps · 128 apparaten</div>
+      </div>
+      <div class="use-card">
+        <span class="use-icon">💼</span>
+        <h3>Remote werken</h3>
+        <p>Videovergaderen, VPN, grote bestanden — alles werkt feilloos. Werk onderweg zonder concessies aan snelheid of stabiliteit.</p>
+        <div class="speed-line">⚡ Tot 300+ Mbps · stabiel signaal</div>
+      </div>
+      <div class="use-card">
+        <span class="use-icon">🎪</span>
+        <h3>Festivals & events</h3>
+        <p>Druk 4G-netwerk? Starlink verbindt via satelliet — volledig onafhankelijk van hoe vol het mobiele netwerk is.</p>
+        <div class="speed-line">⚡ Tot 300+ Mbps · onafhankelijk</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="hoe">
+  <div class="inner">
+    <div class="s-tag">Hoe werkt het</div>
+    <h2 class="s-title">In 4 stappen<br>verbonden</h2>
+    <p class="s-sub">Geen technische kennis nodig. Schotel uitklappen, kabel erin, aan — klaar.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Kies je periode</h3>
+        <p>Selecteer je data op de kalender. Minimaal 1 week. Je ontvangt een bevestiging + betaallink binnen 24 uur.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Ophalen of laten bezorgen</h3>
+        <p>Haal de set op in Almere — of kies voor bezorging (+€25, verzekerd tot €500). De set komt kant-en-klaar.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Schotel neer, aan, genieten</h3>
+        <p>Vrij zicht op de hemel, kabel erin — binnen 2 minuten tot 300+ Mbps. Geen installatie, geen wachtwoorden.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Retour, borg terug</h3>
+        <p>Lever de set in goede staat in. Borg van €250 wordt direct teruggestort. Klaar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KIT CONTENTS -->
+<section id="kit">
+  <div class="inner">
+    <div class="s-tag">Wat zit erin</div>
+    <h2 class="s-title">Compleet pakket,<br>direct klaar voor gebruik</h2>
+    <p class="s-sub">Alles in één stevige tas. Uitpakken, aanzetten, rijden — geen losse onderdelen, geen zoekwerk.</p>
+    <div class="kit-grid">
+      <div class="kit-item">
+        <span class="kit-icon">🛰️</span>
+        <div>
+          <h4>Starlink Mini schotel</h4>
+          <p>Compact, licht en razendsnel. Tot 300+ Mbps via honderden satellieten tegelijk.</p>
+        </div>
+      </div>
+      <div class="kit-item">
+        <span class="kit-icon">♾️</span>
+        <div>
+          <h4>Unlimited Europees netwerk <span class="badge-usp">USP</span></h4>
+          <p>Geen datalimiet. Geen vertragingen. Actief signaal in 40+ landen — altijd en overal.</p>
+        </div>
+      </div>
+      <div class="kit-item">
+        <span class="kit-icon">🔌</span>
+        <div>
+          <h4>220V netstroomadapter</h4>
+          <p>Gewoon in het stopcontact op de camping, in het vakantiehuis of bij een stroomaansluiting op de haven.</p>
+        </div>
+      </div>
+      <div class="kit-item">
+        <span class="kit-icon">🚗</span>
+        <div>
+          <h4>12V auto-adapter <span class="badge-usp">Inbegrepen</span></h4>
+          <p>Sigarettenaansteker aansluiting. Werkt in auto, camper, boot of op het dek — ook onderweg.</p>
+        </div>
+      </div>
+      <div class="kit-item">
+        <span class="kit-icon">📏</span>
+        <div>
+          <h4>15 meter voedingskabel</h4>
+          <p>Ruim genoeg om de schotel buiten te positioneren terwijl jij binnen zit, varend of rijdend.</p>
+        </div>
+      </div>
+      <div class="kit-item">
+        <span class="kit-icon">🧳</span>
+        <div>
+          <h4>Stevige reistas</h4>
+          <p>Alles veilig en georganiseerd in één compacte tas. Plug & play — schotel eruit, kabel erin, klaar.</p>
+        </div>
+      </div>
+    </div>
+    <div class="kit-banner">
+      <span class="kit-banner-icon">📦</span>
+      <div>
+        <h4>Optioneel: bezorg & retourservice</h4>
+        <p>Liever niet zelf komen ophalen? Wij sturen alles op via PostNL/DHL, verzekerd tot €500. Retourverpakking inbegrepen. Meerprijs: <strong style="color:white">€25</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="tarieven">
+  <div class="inner">
+    <div class="s-tag">Tarieven</div>
+    <h2 class="s-title">Langer meenemen =<br>meer besparen</h2>
+    <p class="s-sub">Alle tarieven zijn inclusief actief Europees netwerk met unlimited data en het volledige pakket. Borg: €250 (retour na inlevering).</p>
+
+    <div class="speed-block">
+      <div class="speed-pill">⚡ Tot 300+ Mbps download</div>
+      <div class="speed-pill">📡 Unlimited data · geen limiet</div>
+      <div class="speed-pill">🌍 40+ landen Europa</div>
+      <div class="speed-pill">📺 128 apparaten tegelijk</div>
+    </div>
+
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="p-label">1 week</div>
+        <div class="p-amount">€89</div>
+        <div class="p-days">7 dagen</div>
+        <div class="p-day">€12,71 / dag</div>
+      </div>
+      <div class="price-card">
+        <div class="p-label">2 weken</div>
+        <div class="p-amount">€139</div>
+        <div class="p-days">14 dagen</div>
+        <div class="p-day">€9,93 / dag</div>
+      </div>
+      <div class="price-card pop">
+        <div class="pop-badge">⭐ Populairste keuze</div>
+        <div class="p-label">3 weken</div>
+        <div class="p-amount">€169</div>
+        <div class="p-days">21 dagen</div>
+        <div class="p-day">€8,05 / dag</div>
+      </div>
+      <div class="price-card">
+        <div class="p-label">4 weken</div>
+        <div class="p-amount">€189</div>
+        <div class="p-days">28 dagen</div>
+        <div class="p-day">€6,75 / dag</div>
+      </div>
+      <div class="price-card">
+        <div class="p-label">Extra week</div>
+        <div class="p-amount">€39</div>
+        <div class="p-days">per week na week 4</div>
+        <div class="p-day">€5,57 / dag</div>
+      </div>
+    </div>
+    <div class="price-footer">
+      <span>Borg: <strong>€250</strong> (retour)</span>
+      <span>Bezorging optioneel: <strong>+€25</strong></span>
+      <span>Minimale periode: <strong>1 week</strong></span>
+      <span>12V auto-adapter: <strong>inbegrepen ✔</strong></span>
+      <span>Unlimited data: <strong>inbegrepen ✔</strong></span>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="reserveer">
+  <div class="inner">
+    <div class="s-tag">Reserveren</div>
+    <h2 class="s-title">Kies jouw periode</h2>
+    <p class="s-sub">Selecteer een startdatum op de kalender, vul je gegevens in en we bevestigen binnen 24 uur.</p>
+
+    <div class="book-wrap">
+      <!-- CALENDAR -->
+      <div>
+        <div class="cal-box">
+          <div class="cal-head">
+            <div class="cal-month-lbl" id="calLbl"></div>
+            <div class="cal-nav">
+              <button type="button" aria-label="Vorige maand" onclick="changeMonth(-1)">‹</button>&nbsp;
+              <button type="button" aria-label="Volgende maand" onclick="changeMonth(1)">›</button>
+            </div>
+          </div>
+          <div class="cal-grid" id="calGrid"></div>
+          <div class="cal-legend">
+            <span><span class="ldot ldot-a"></span>Beschikbaar</span>
+            <span><span class="ldot ldot-b"></span>Niet beschikbaar</span>
+          </div>
+          <div class="cal-status" id="calStatus" role="status" aria-live="polite">Beschikbaarheid laden...</div>
+        </div>
+        <button class="admin-btn" type="button" aria-controls="adminPanel" aria-expanded="false" onclick="toggleAdmin()">🔒 Beheer beschikbaarheid</button>
+        <div class="admin-panel" id="adminPanel">
+          <div id="adminLogin" class="admin-login">
+            <h4>Beheerder inloggen</h4>
+            <input type="email" id="adminEmail" value="info@fhamazul.es" autocomplete="username" aria-label="E-mailadres beheerder">
+            <input type="password" id="adminPassword" autocomplete="current-password" placeholder="Wachtwoord" aria-label="Wachtwoord beheerder" onkeydown="if(event.key==='Enter') adminLogin()">
+            <button class="btn-add" type="button" id="loginBtn" onclick="adminLogin()">Inloggen</button>
+          </div>
+          <div id="adminControls" class="hidden">
+            <div class="admin-actions">
+              <h4>Periodes blokkeren</h4>
+              <button class="btn-logout" type="button" onclick="adminLogout()">Uitloggen</button>
+            </div>
+            <div class="admin-user" id="adminUser"></div>
+            <div class="admin-row">
+              <input type="date" id="bStart" aria-label="Blokkeer vanaf">
+              <input type="date" id="bEnd" aria-label="Blokkeer tot en met">
+              <button class="btn-add" type="button" id="blockBtn" onclick="addBlock()">Blokkeer</button>
+            </div>
+            <ul class="blist" id="bList"></ul>
+          </div>
+          <div class="admin-message" id="adminMessage" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div>
+        <div class="form-wrap" id="formWrap">
+          <div class="ff">
+            <label for="fName">Naam</label>
+            <input type="text" id="fName" autocomplete="name" placeholder="Voor- en achternaam" required>
+          </div>
+          <div class="ff">
+            <label for="fEmail">E-mailadres</label>
+            <input type="email" id="fEmail" autocomplete="email" placeholder="jouw@email.nl" required>
+          </div>
+          <div class="ff">
+            <label for="fPhone">Telefoon (WhatsApp)</label>
+            <input type="tel" id="fPhone" autocomplete="tel" placeholder="+31 6 xxxxxxxx" required>
+          </div>
+          <div class="ff">
+            <label for="fPeriod">Periode</label>
+            <select id="fPeriod" onchange="updateSummary()">
+              <option value="">Kies je periode</option>
+              <option value="1wk|89">1 week — €89</option>
+              <option value="2wk|139">2 weken — €139</option>
+              <option value="3wk|169">3 weken — €169</option>
+              <option value="4wk|189">4 weken — €189</option>
+            </select>
+          </div>
+          <div class="ff">
+            <label for="fDelivery">Ophalen of laten bezorgen?</label>
+            <select id="fDelivery" onchange="updateSummary()">
+              <option value="pickup">Ophalen in Almere (gratis)</option>
+              <option value="send">Bezorgen + retour (+€25, verzekerd)</option>
+            </select>
+          </div>
+          <div class="ff">
+            <label for="fDest">Bestemming / opmerkingen</label>
+            <input type="text" id="fDest" autocomplete="off" placeholder="bijv. Kroatië, Waddenzee, Alpen...">
+          </div>
+          <div class="form-summary" id="fSummary">Kies een periode hierboven om de prijsopgave te zien.</div>
+          <p class="form-note">Minimale periode: 1 week. Na je aanvraag ontvang je binnen 24 uur een betaallink. Borg van €250 wordt na inlevering teruggestort.</p>
+          <button class="btn-reserveer" type="button" onclick="submitForm()">Stuur reserveringsaanvraag →</button>
+        </div>
+        <div class="success" id="successMsg">✅ Aanvraag ontvangen! Je hoort binnen 24 uur van ons.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="inner">
+    <div class="s-tag">Veelgestelde vragen</div>
+    <h2 class="s-title">Alles wat je<br>wil weten</h2>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Hoe snel is het internet precies? <span class="arr">+</span></button>
+        <div class="faq-a">Starlink Mini haalt gemiddeld 100–300+ Mbps download en 10–20 Mbps upload. Meer dan genoeg voor 4K Netflix, videobellen, VPN en grote bestanden uploaden. Maximaal 128 apparaten tegelijk op één set.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Werkt het ook op het water en langs de kust? <span class="arr">+</span></button>
+        <div class="faq-a">Ja. Starlink Mini werkt uitstekend op binnenwater en langs de kust tot 12 zeemijlen. Bevestig de schotel op een stabiele plek met vrij zicht op de hemel. De 12V adapter maakt aansluiting op boordstroom eenvoudig. Op open zee buiten 12 zeemijlen kan de dekking variëren.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">In welke landen werkt het Europese netwerk? <span class="arr">+</span></button>
+        <div class="faq-a">Het actieve Europese netwerk werkt in 40+ landen, waaronder Nederland, België, Duitsland, Frankrijk, Spanje, Portugal, Italië, Kroatië, Griekenland en alle Scandinavische landen. Buiten Europa is roaming niet inbegrepen.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Wat is de minimale periode? <span class="arr">+</span></button>
+        <div class="faq-a">De minimale periode is 1 week. Kortere periodes zijn in uitzonderlijke gevallen mogelijk — neem contact op via WhatsApp om de mogelijkheden te bespreken.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Kan ik de periode verlengen als ik langer weg wil? <span class="arr">+</span></button>
+        <div class="faq-a">Ja, verlengen is vrijwel altijd mogelijk als de set nog beschikbaar is. Elke extra week na week 4 kost slechts €39. Neem tijdig contact op via WhatsApp — dan passen we de boeking aan.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Hoe werkt de 12V auto-aansluiting? <span class="arr">+</span></button>
+        <div class="faq-a">De meegeleverde 12V adapter past op een standaard sigarettenaansteker-stopcontact in auto, camper of boot. Via de bijgevoegde USB-C naar DC kabel (5m) verbind je de schotel. Zo kun je rijden, varen of stilstaan — je bent altijd verbonden.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Wat als de set beschadigd terugkomt? <span class="arr">+</span></button>
+        <div class="faq-a">Bij aantoonbare schade door eigen schuld wordt dit verrekend met de borg van €250. Normale gebruikssporen vallen hier niet onder. We fotograferen de set bij elke overdracht als bewijs van de staat.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Hoe werkt de bezorgservice? <span class="arr">+</span></button>
+        <div class="faq-a">Voor €25 extra bezorgen we de set via PostNL of DHL, verzekerd tot €500. In de doos zit een retourlabel — stuur de set aan het einde van je periode in de originele verpakking terug. Eenvoudig en zonder gedoe.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logo">STARLINK<span class="sig">MINI</span> &nbsp;·&nbsp; Op Pad</div>
+  <div class="f-links">
+    <a href="#forwie">Voor wie</a>
+    <a href="#tarieven">Tarieven</a>
+    <a href="#reserveer">Reserveren</a>
+    <a href="#faq">FAQ</a>
+    <a href="mailto:info@fhamazul.es">info@fhamazul.es</a>
+    <a href="https://wa.me/34613530099" target="_blank">WhatsApp</a>
+  </div>
+  <div class="f-copy">© 2026 Starlink Mini Op Pad · Almere · Niet gelieerd aan SpaceX of Starlink Inc.</div>
+</footer>
+<a class="sticky-cta" href="#reserveer">Reserveer Starlink Mini</a>
+
+<div class="auth-setup hidden" id="passwordSetup" role="dialog" aria-modal="true" aria-labelledby="passwordSetupTitle">
+  <div class="auth-setup-box">
+    <h2 id="passwordSetupTitle">Beheerwachtwoord instellen</h2>
+    <p>Kies een sterk wachtwoord van minimaal 12 tekens voor het agendabeheer.</p>
+    <input type="password" id="newAdminPassword" autocomplete="new-password" placeholder="Nieuw wachtwoord" aria-label="Nieuw beheerwachtwoord">
+    <input type="password" id="confirmAdminPassword" autocomplete="new-password" placeholder="Herhaal wachtwoord" aria-label="Herhaal beheerwachtwoord">
+    <button class="btn-add" type="button" id="savePasswordBtn" onclick="saveAdminPassword()">Wachtwoord opslaan</button>
+    <div class="admin-message" id="passwordMessage" role="status" aria-live="polite"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./config.js"></script>
+<script>
+// ── MOBILE NAV ─────────────────────────────────────
+function toggleMobileNav() {
+  const menu = document.getElementById('mobileNav');
+  const btn = document.querySelector('.ham');
+  const isOpen = menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded', String(isOpen));
+  btn.setAttribute('aria-label', isOpen ? 'Menu sluiten' : 'Menu openen');
+}
+function closeMobileNav() {
+  document.getElementById('mobileNav').classList.remove('open');
+  const btn = document.querySelector('.ham');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.setAttribute('aria-label', 'Menu openen');
+}
+
+// ── CALENDAR ───────────────────────────────────────
+const MONTHS = ['Januari','Februari','Maart','April','Mei','Juni','Juli','Augustus','September','Oktober','November','December'];
+const DDAYS = ['Ma','Di','Wo','Do','Vr','Za','Zo'];
+let curDate = new Date();
+let selStart = null, selEnd = null;
+let blocked = [];
+let calendarState = 'loading';
+let db = null;
+let currentSession = null;
+const authSetupRequested = /type=(invite|recovery)/.test(`${window.location.hash}&${window.location.search}`);
+
+function setCalendarStatus(message, isError=false) {
+  const status=document.getElementById('calStatus');
+  status.textContent=message;
+  status.classList.toggle('error',isError);
+}
+
+function setAdminMessage(message='', isError=false) {
+  const status=document.getElementById('adminMessage');
+  status.textContent=message;
+  status.classList.toggle('error',isError);
+}
+
+async function initAvailability() {
+  const cfg=window.STARLINK_CONFIG || {};
+  const configured=cfg.supabaseUrl && cfg.supabaseAnonKey && !cfg.supabaseUrl.includes('YOUR_PROJECT');
+  if(!configured || !window.supabase) {
+    calendarState='error';
+    setCalendarStatus('De online agenda wordt nog gekoppeld. Reserveren is tijdelijk niet mogelijk.',true);
+    setAdminMessage('De databaseconfiguratie ontbreekt.',true);
+    renderCal();
+    return;
+  }
+  db=window.supabase.createClient(cfg.supabaseUrl,cfg.supabaseAnonKey,{
+    auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}
+  });
+  const {data}=await db.auth.getSession();
+  setAdminUi(data.session);
+  if(authSetupRequested && data.session) showPasswordSetup();
+  db.auth.onAuthStateChange((_event,session)=>{
+    setAdminUi(session);
+    if(authSetupRequested && session) showPasswordSetup();
+  });
+  await loadBlocks();
+  window.setInterval(loadBlocks,60000);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden) loadBlocks();});
+}
+
+async function loadBlocks() {
+  if(!db) return;
+  try {
+    const {data,error}=await db.from('blocked_periods').select('id,start_date,end_date').order('start_date');
+    if(error) throw error;
+    blocked=data.map(row=>({id:row.id,s:row.start_date,e:row.end_date}));
+    calendarState='ready';
+    setCalendarStatus('Actuele beschikbaarheid. Wordt automatisch bijgewerkt.');
+    renderCal();
+    if(currentSession) renderBList();
+  } catch(error) {
+    calendarState='error';
+    setCalendarStatus('Beschikbaarheid kan nu niet worden geladen. Probeer het later opnieuw.',true);
+    renderCal();
+  }
+}
+
+function renderCal() {
+  const yr = curDate.getFullYear(), mo = curDate.getMonth();
+  document.getElementById('calLbl').textContent = MONTHS[mo] + ' ' + yr;
+  const grid = document.getElementById('calGrid');
+  grid.innerHTML = '';
+  DDAYS.forEach(d => { const h = document.createElement('div'); h.className='cal-dh'; h.textContent=d; grid.appendChild(h); });
+  const firstWd = new Date(yr, mo, 1).getDay();
+  const offset = firstWd === 0 ? 6 : firstWd - 1;
+  const dim = new Date(yr, mo+1, 0).getDate();
+  const today = new Date(); today.setHours(0,0,0,0);
+  for (let i=0;i<offset;i++) { const e=document.createElement('div'); e.className='cal-d empty'; grid.appendChild(e); }
+  for (let d=1;d<=dim;d++) {
+    const el = document.createElement('button'); el.className='cal-d'; el.textContent=d; el.type='button';
+    const dt = new Date(yr,mo,d); dt.setHours(0,0,0,0);
+    el.setAttribute('aria-label', dt.toLocaleDateString('nl-NL', { weekday:'long', day:'numeric', month:'long', year:'numeric' }));
+    if (dt < today) { el.classList.add('past'); el.disabled = true; }
+    else if (calendarState !== 'ready') { el.classList.add('past'); el.disabled = true; }
+    else if (isBlocked(dt)) { el.classList.add('blocked'); el.disabled = true; }
+    else {
+      if (selStart && dt.getTime()===selStart.getTime()) el.classList.add('selected');
+      else if (selEnd && dt.getTime()===selEnd.getTime()) el.classList.add('selected');
+      else if (selStart && selEnd && dt>selStart && dt<selEnd) el.classList.add('in-range');
+      if (dt.getTime()===today.getTime()) el.classList.add('today');
+      el.addEventListener('click', ()=>pickDay(dt));
+    }
+    grid.appendChild(el);
+  }
+}
+function isBlocked(d) {
+  return blocked.some(r => { const s=new Date(r.s); s.setHours(0,0,0,0); const e=new Date(r.e); e.setHours(0,0,0,0); return d>=s && d<=e; });
+}
+function pickDay(d) {
+  if(calendarState!=='ready') return;
+  selStart=d;
+  selEnd=null;
+  updateSummary();
+  renderCal();
+}
+function changeMonth(dir) { curDate.setMonth(curDate.getMonth()+dir); renderCal(); }
+
+// ── ADMIN ──────────────────────────────────────────
+function toggleAdmin() {
+  const p=document.getElementById('adminPanel');
+  const btn=document.querySelector('.admin-btn');
+  const isOpen=p.classList.toggle('open');
+  btn.setAttribute('aria-expanded', String(isOpen));
+  if(isOpen && currentSession) renderBList();
+}
+
+function setAdminUi(session) {
+  currentSession=session || null;
+  document.getElementById('adminLogin').classList.toggle('hidden',!!session);
+  document.getElementById('adminControls').classList.toggle('hidden',!session);
+  document.getElementById('adminUser').textContent=session ? `Ingelogd als ${session.user.email}` : '';
+  if(session) renderBList();
+}
+
+async function adminLogin() {
+  if(!db){setAdminMessage('De online agenda is nog niet geconfigureerd.',true);return;}
+  const email=document.getElementById('adminEmail').value.trim();
+  const password=document.getElementById('adminPassword').value;
+  const button=document.getElementById('loginBtn');
+  if(!email||!password){setAdminMessage('Vul e-mailadres en wachtwoord in.',true);return;}
+  button.disabled=true;
+  setAdminMessage('Inloggen...');
+  const {error}=await db.auth.signInWithPassword({email,password});
+  button.disabled=false;
+  if(error){setAdminMessage('Inloggen mislukt. Controleer het e-mailadres en wachtwoord.',true);return;}
+  document.getElementById('adminPassword').value='';
+  setAdminMessage('Je bent ingelogd.');
+}
+
+async function adminLogout() {
+  if(db) await db.auth.signOut();
+  setAdminMessage('Je bent uitgelogd.');
+}
+
+function showPasswordSetup() {
+  document.getElementById('passwordSetup').classList.remove('hidden');
+  document.getElementById('newAdminPassword').focus();
+}
+
+async function saveAdminPassword() {
+  const password=document.getElementById('newAdminPassword').value;
+  const confirmation=document.getElementById('confirmAdminPassword').value;
+  const message=document.getElementById('passwordMessage');
+  const button=document.getElementById('savePasswordBtn');
+  message.classList.remove('error');
+  if(password.length<12){message.textContent='Gebruik minimaal 12 tekens.';message.classList.add('error');return;}
+  if(password!==confirmation){message.textContent='De wachtwoorden zijn niet gelijk.';message.classList.add('error');return;}
+  button.disabled=true;
+  message.textContent='Wachtwoord opslaan...';
+  const {error}=await db.auth.updateUser({password});
+  button.disabled=false;
+  if(error){message.textContent='Opslaan mislukt. Vraag een nieuwe uitnodiging aan.';message.classList.add('error');return;}
+  message.textContent='Wachtwoord ingesteld. Je bent nu ingelogd als beheerder.';
+  window.history.replaceState({},document.title,window.location.pathname);
+  window.setTimeout(()=>document.getElementById('passwordSetup').classList.add('hidden'),1200);
+}
+
+async function addBlock() {
+  const s=document.getElementById('bStart').value, e=document.getElementById('bEnd').value;
+  if(!currentSession){setAdminMessage('Log eerst in.',true);return;}
+  if(!s||!e){setAdminMessage('Kies een begin- en einddatum.',true);return;}
+  if(s>e){setAdminMessage('De einddatum moet na de begindatum liggen.',true);return;}
+  const button=document.getElementById('blockBtn');
+  button.disabled=true;
+  const {error}=await db.from('blocked_periods').insert({start_date:s,end_date:e});
+  button.disabled=false;
+  if(error){
+    const overlap=error.code==='23P01';
+    setAdminMessage(overlap?'Deze periode overlapt met een bestaande blokkering.':'Opslaan mislukt. Probeer het opnieuw.',true);
+    return;
+  }
+  document.getElementById('bStart').value=''; document.getElementById('bEnd').value='';
+  setAdminMessage('Periode is geblokkeerd en direct zichtbaar voor bezoekers.');
+  await loadBlocks();
+}
+async function delBlock(id) {
+  if(!currentSession) return;
+  const {error}=await db.from('blocked_periods').delete().eq('id',id);
+  if(error){setAdminMessage('Verwijderen mislukt. Probeer het opnieuw.',true);return;}
+  setAdminMessage('Blokkering verwijderd.');
+  await loadBlocks();
+}
+function renderBList() {
+  const ul=document.getElementById('bList'); ul.innerHTML='';
+  if(!blocked.length){ul.innerHTML='<li style="color:rgba(255,255,255,0.25)">Geen geblokkeerde periodes</li>';return;}
+  blocked.forEach(r=>{
+    const li=document.createElement('li');
+    const label=document.createElement('span');
+    label.textContent=`${r.s} t/m ${r.e}`;
+    const button=document.createElement('button');
+    button.className='btn-del'; button.type='button'; button.textContent='Verwijder';
+    button.addEventListener('click',()=>delBlock(r.id));
+    li.append(label,button);
+    ul.appendChild(li);
+  });
+}
+
+// ── FORM ──────────────────────────────────────────
+function updateSummary() {
+  const period=document.getElementById('fPeriod').value;
+  const delivery=document.getElementById('fDelivery').value;
+  const box=document.getElementById('fSummary');
+  if(!period){
+    selEnd=null;
+    box.textContent='Kies een periode hierboven om de prijsopgave te zien.';
+    renderCal();
+    return;
+  }
+  const [dur,price]=period.split('|');
+  const weeks=parseInt(dur,10);
+  if(selStart){
+    selEnd=new Date(selStart);
+    selEnd.setDate(selStart.getDate()+(weeks*7)-1);
+  }
+  const dc=delivery==='send'?25:0;
+  const total=parseInt(price)+dc;
+  const startStr=selStart?selStart.toLocaleDateString('nl-NL'):'(kies startdatum op kalender)';
+  const endStr=selEnd?' t/m '+selEnd.toLocaleDateString('nl-NL'):'';
+  const available=!selStart || isRangeAvailable(selStart,selEnd);
+  if(!available){
+    box.innerHTML=`<strong style="color:#ff6868">Deze huurperiode is niet volledig beschikbaar.</strong><br>Kies een andere startdatum of periode.`;
+    renderCal();
+    return;
+  }
+  box.innerHTML=`<strong style="color:white">Jouw reservering</strong><br>
+Periode: ${dur} · Start: ${startStr}${endStr}<br>
+Tarief: €${price}${dc?' + €'+dc+' bezorging':''}<br>
+<strong style="color:#00d4ff">Totaal: €${total} + €250 borg</strong>`;
+  renderCal();
+}
+function isRangeAvailable(start,end) {
+  if(!start||!end) return false;
+  const day=new Date(start);
+  while(day<=end){
+    if(isBlocked(day)) return false;
+    day.setDate(day.getDate()+1);
+  }
+  return true;
+}
+function submitForm() {
+  const n=document.getElementById('fName').value.trim();
+  const e=document.getElementById('fEmail').value.trim();
+  const phone=document.getElementById('fPhone').value.trim();
+  const p=document.getElementById('fPeriod').value;
+  if(calendarState!=='ready'){alert('De beschikbaarheid kan nu niet worden gecontroleerd. Probeer het later opnieuw.');return;}
+  if(!n||!e||!phone||!p||!selStart){alert('Vul naam, e-mailadres, telefoon, periode en startdatum in.');return;}
+  if(!isRangeAvailable(selStart,selEnd)){alert('De gekozen huurperiode is niet volledig beschikbaar. Kies een andere startdatum.');return;}
+  const [dur,price]=p.split('|');
+  const delivery=document.getElementById('fDelivery').value === 'send' ? 'Bezorgen + retour' : 'Ophalen in Almere';
+  const dest=document.getElementById('fDest').value.trim() || 'Geen opmerking';
+  const subject=encodeURIComponent('Reserveringsaanvraag Starlink Mini');
+  const body=encodeURIComponent(
+    `Naam: ${n}\nE-mail: ${e}\nTelefoon: ${phone}\nPeriode: ${dur}\nStartdatum: ${selStart.toLocaleDateString('nl-NL')}\nEinddatum: ${selEnd ? selEnd.toLocaleDateString('nl-NL') : 'Nog afstemmen'}\nTarief: €${price}\nLevering: ${delivery}\nBestemming/opmerking: ${dest}`
+  );
+  document.getElementById('formWrap').style.display='none';
+  const success=document.getElementById('successMsg');
+  success.innerHTML=`Aanvraag klaar. <a href="mailto:info@fhamazul.es?subject=${subject}&body=${body}">Open je mailprogramma om te versturen</a> of stuur ons direct een WhatsApp.`;
+  success.style.display='block';
+}
+
+// ── FAQ ───────────────────────────────────────────
+function toggleFaq(btn) {
+  const a=btn.nextElementSibling, open=btn.classList.contains('open');
+  document.querySelectorAll('.faq-q').forEach(b=>{b.classList.remove('open');b.nextElementSibling.classList.remove('open');});
+  if(!open){btn.classList.add('open');a.classList.add('open');}
+}
+
+renderCal();
+initAvailability();
+</script>
+</body>
+</html>
