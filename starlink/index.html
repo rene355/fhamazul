@@ -6,7 +6,7 @@
 <meta name="description" content="Huur een Starlink Mini voor vakantie, camper, boot, remote werk of events. Unlimited data in 40+ Europese landen, inclusief 12V adapter en compleet plug & play pakket.">
 <meta name="theme-color" content="#000000">
 <meta property="og:title" content="Starlink Mini huren voor snel internet onderweg">
-<meta property="og:description" content="Razendsnel satellietinternet voor camping, boot, vakantiehuis en remote werk. Vanaf €89 per week, inclusief Europees netwerk en unlimited data.">
+<meta property="og:description" content="Razendsnel satellietinternet voor camping, boot, vakantiehuis en remote werk. Vanaf €7 per dag, inclusief Europees netwerk en unlimited data.">
 <meta property="og:type" content="website">
 <title>Starlink Mini huren | Satellietinternet voor vakantie, camper en boot</title>
 <style>
@@ -271,9 +271,9 @@
     padding: 3px 10px; border-radius: 10px; margin-bottom: 10px; display: inline-block;
   }
   .p-label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
-  .p-amount { font-size: 38px; font-weight: 800; letter-spacing: -2px; margin-bottom: 3px; }
-  .p-days { font-size: 12px; color: rgba(255,255,255,0.35); margin-bottom: 12px; }
-  .p-day { font-size: 13px; color: var(--signal); font-weight: 700; }
+  .p-amount { font-size: 38px; font-weight: 800; letter-spacing: -2px; margin-bottom: 7px; }
+  .p-unit { font-size: 13px; font-weight: 700; letter-spacing: 0; color: var(--signal); }
+  .p-days { font-size: 13px; color: rgba(255,255,255,0.52); }
   .price-footer {
     display: flex; gap: 18px; flex-wrap: wrap;
     background: #090909; border: 0.5px solid rgba(255,255,255,0.06);
@@ -322,6 +322,7 @@
   .cal-d:hover:not(.blocked):not(.past):not(.empty) { background: rgba(0,212,255,0.13); color: var(--signal); }
   .cal-d.today { font-weight: 800; color: var(--signal); }
   .cal-d.blocked { background: rgba(255,70,70,0.1); color: rgba(255,80,80,0.5); cursor: not-allowed; text-decoration: line-through; }
+  .cal-d.limited { background: rgba(255,181,71,0.14); color: #ffbf61; font-weight: 700; }
   .cal-d.selected { background: var(--signal); color: #000; font-weight: 800; border-radius: 8px; }
   .cal-d.in-range { background: rgba(0,212,255,0.09); }
   .cal-d.past { color: rgba(255,255,255,0.18); cursor: not-allowed; }
@@ -333,6 +334,7 @@
   }
   .ldot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-right: 5px; vertical-align: middle; }
   .ldot-a { background: var(--signal); }
+  .ldot-l { background: #ffb547; }
   .ldot-b { background: rgba(255,80,80,0.6); }
 
   /* Admin */
@@ -349,12 +351,12 @@
   .admin-panel.open { display: block; }
   .admin-panel h4 { font-size: 12px; font-weight: 700; color: var(--signal); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.08em; }
   .admin-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
-  .admin-row input {
+  .admin-row input, .admin-row select {
     background: #1c1c1c; border: 0.5px solid rgba(255,255,255,0.12);
     color: white; padding: 7px 11px; border-radius: var(--radius-sm);
     font-size: 13px; outline: none; font-family: inherit;
   }
-  .admin-row input:focus { border-color: var(--signal); }
+  .admin-row input:focus, .admin-row select:focus { border-color: var(--signal); }
   .btn-add { background: var(--signal); color: #000; border: none; padding: 7px 14px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 700; cursor: pointer; }
   .blist { list-style: none; font-size: 12px; color: rgba(255,255,255,0.4); }
   .blist li { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 0.5px solid rgba(255,255,255,0.05); }
@@ -484,7 +486,7 @@
   "name": "Starlink Mini Op Pad",
   "areaServed": "Europa",
   "description": "Starlink Mini verhuur voor vakantie, camper, boot, events en remote werken.",
-  "priceRange": "Vanaf €89 per week",
+  "priceRange": "Vanaf €7 per dag",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Almere",
@@ -550,7 +552,7 @@
       <div class="stat"><div class="stat-num">300<span class="sig">+</span></div><div class="stat-label">Mbps download</div></div>
       <div class="stat"><div class="stat-num"><span class="sig">∞</span></div><div class="stat-label">Unlimited data</div></div>
       <div class="stat"><div class="stat-num">40<span class="sig">+</span></div><div class="stat-label">Landen Europa</div></div>
-      <div class="stat"><div class="stat-num">€89</div><div class="stat-label">Vanaf 1 week</div></div>
+      <div class="stat"><div class="stat-num">€13</div><div class="stat-label">Per dag vanaf 1 week</div></div>
     </div>
   </div>
 </section>
@@ -710,34 +712,29 @@
     <div class="price-grid">
       <div class="price-card">
         <div class="p-label">1 week</div>
-        <div class="p-amount">€89</div>
-        <div class="p-days">7 dagen</div>
-        <div class="p-day">€12,71 / dag</div>
+        <div class="p-amount">€13 <span class="p-unit">/ dag</span></div>
+        <div class="p-days">€91 voor 7 dagen</div>
       </div>
       <div class="price-card">
         <div class="p-label">2 weken</div>
-        <div class="p-amount">€139</div>
-        <div class="p-days">14 dagen</div>
-        <div class="p-day">€9,93 / dag</div>
+        <div class="p-amount">€10 <span class="p-unit">/ dag</span></div>
+        <div class="p-days">€140 voor 14 dagen</div>
       </div>
       <div class="price-card pop">
         <div class="pop-badge">⭐ Populairste keuze</div>
         <div class="p-label">3 weken</div>
-        <div class="p-amount">€169</div>
-        <div class="p-days">21 dagen</div>
-        <div class="p-day">€8,05 / dag</div>
+        <div class="p-amount">€9 <span class="p-unit">/ dag</span></div>
+        <div class="p-days">€189 voor 21 dagen</div>
       </div>
       <div class="price-card">
         <div class="p-label">4 weken</div>
-        <div class="p-amount">€189</div>
-        <div class="p-days">28 dagen</div>
-        <div class="p-day">€6,75 / dag</div>
+        <div class="p-amount">€7,50 <span class="p-unit">/ dag</span></div>
+        <div class="p-days">€210 voor 28 dagen</div>
       </div>
       <div class="price-card">
         <div class="p-label">Extra week</div>
-        <div class="p-amount">€39</div>
-        <div class="p-days">per week na week 4</div>
-        <div class="p-day">€5,57 / dag</div>
+        <div class="p-amount">€7 <span class="p-unit">/ dag</span></div>
+        <div class="p-days">€49 per extra week</div>
       </div>
     </div>
     <div class="price-footer">
@@ -771,6 +768,7 @@
           <div class="cal-grid" id="calGrid"></div>
           <div class="cal-legend">
             <span><span class="ldot ldot-a"></span>Beschikbaar</span>
+            <span><span class="ldot ldot-l"></span>Beperkt beschikbaar</span>
             <span><span class="ldot ldot-b"></span>Niet beschikbaar</span>
           </div>
           <div class="cal-status" id="calStatus" role="status" aria-live="polite">Beschikbaarheid laden...</div>
@@ -785,14 +783,18 @@
           </div>
           <div id="adminControls" class="hidden">
             <div class="admin-actions">
-              <h4>Periodes blokkeren</h4>
+              <h4>Beschikbaarheid beheren</h4>
               <button class="btn-logout" type="button" onclick="adminLogout()">Uitloggen</button>
             </div>
             <div class="admin-user" id="adminUser"></div>
             <div class="admin-row">
               <input type="date" id="bStart" aria-label="Blokkeer vanaf">
               <input type="date" id="bEnd" aria-label="Blokkeer tot en met">
-              <button class="btn-add" type="button" id="blockBtn" onclick="addBlock()">Blokkeer</button>
+              <select id="bStatus" aria-label="Beschikbaarheidsstatus">
+                <option value="unavailable">Niet beschikbaar</option>
+                <option value="limited">Beperkt beschikbaar</option>
+              </select>
+              <button class="btn-add" type="button" id="blockBtn" onclick="addBlock()">Opslaan</button>
             </div>
             <ul class="blist" id="bList"></ul>
           </div>
@@ -819,10 +821,10 @@
             <label for="fPeriod">Periode</label>
             <select id="fPeriod" onchange="updateSummary()">
               <option value="">Kies je periode</option>
-              <option value="1wk|89">1 week — €89</option>
-              <option value="2wk|139">2 weken — €139</option>
-              <option value="3wk|169">3 weken — €169</option>
-              <option value="4wk|189">4 weken — €189</option>
+              <option value="1wk|91">1 week — €13/dag — €91 totaal</option>
+              <option value="2wk|140">2 weken — €10/dag — €140 totaal</option>
+              <option value="3wk|189">3 weken — €9/dag — €189 totaal</option>
+              <option value="4wk|210">4 weken — €7,50/dag — €210 totaal</option>
             </select>
           </div>
           <div class="ff">
@@ -870,7 +872,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Kan ik de periode verlengen als ik langer weg wil? <span class="arr">+</span></button>
-        <div class="faq-a">Ja, verlengen is vrijwel altijd mogelijk als de set nog beschikbaar is. Elke extra week na week 4 kost slechts €39. Neem tijdig contact op via WhatsApp — dan passen we de boeking aan.</div>
+        <div class="faq-a">Ja, verlengen is vrijwel altijd mogelijk als de set nog beschikbaar is. Elke extra week na week 4 kost €49 (€7 per dag). Neem tijdig contact op via WhatsApp — dan passen we de boeking aan.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Hoe werkt de 12V auto-aansluiting? <span class="arr">+</span></button>
@@ -983,9 +985,9 @@ async function initAvailability() {
 async function loadBlocks() {
   if(!db) return;
   try {
-    const {data,error}=await db.from('blocked_periods').select('id,start_date,end_date').order('start_date');
+    const {data,error}=await db.from('blocked_periods').select('id,start_date,end_date,status').order('start_date');
     if(error) throw error;
-    blocked=data.map(row=>({id:row.id,s:row.start_date,e:row.end_date}));
+    blocked=data.map(row=>({id:row.id,s:row.start_date,e:row.end_date,status:row.status || 'unavailable'}));
     calendarState='ready';
     setCalendarStatus('Actuele beschikbaarheid. Wordt automatisch bijgewerkt.');
     renderCal();
@@ -1014,8 +1016,9 @@ function renderCal() {
     el.setAttribute('aria-label', dt.toLocaleDateString('nl-NL', { weekday:'long', day:'numeric', month:'long', year:'numeric' }));
     if (dt < today) { el.classList.add('past'); el.disabled = true; }
     else if (calendarState !== 'ready') { el.classList.add('past'); el.disabled = true; }
-    else if (isBlocked(dt)) { el.classList.add('blocked'); el.disabled = true; }
+    else if (getDateAvailability(dt)==='unavailable') { el.classList.add('blocked'); el.disabled = true; }
     else {
+      if (getDateAvailability(dt)==='limited') el.classList.add('limited');
       if (selStart && dt.getTime()===selStart.getTime()) el.classList.add('selected');
       else if (selEnd && dt.getTime()===selEnd.getTime()) el.classList.add('selected');
       else if (selStart && selEnd && dt>selStart && dt<selEnd) el.classList.add('in-range');
@@ -1026,7 +1029,15 @@ function renderCal() {
   }
 }
 function isBlocked(d) {
-  return blocked.some(r => { const s=new Date(r.s); s.setHours(0,0,0,0); const e=new Date(r.e); e.setHours(0,0,0,0); return d>=s && d<=e; });
+  return getDateAvailability(d)==='unavailable';
+}
+function getDateAvailability(d) {
+  const period=blocked.find(r => {
+    const s=new Date(`${r.s}T00:00:00`);
+    const e=new Date(`${r.e}T00:00:00`);
+    return d>=s && d<=e;
+  });
+  return period ? period.status : 'available';
 }
 function pickDay(d) {
   if(calendarState!=='ready') return;
@@ -1099,12 +1110,13 @@ async function saveAdminPassword() {
 
 async function addBlock() {
   const s=document.getElementById('bStart').value, e=document.getElementById('bEnd').value;
+  const status=document.getElementById('bStatus').value;
   if(!currentSession){setAdminMessage('Log eerst in.',true);return;}
   if(!s||!e){setAdminMessage('Kies een begin- en einddatum.',true);return;}
   if(s>e){setAdminMessage('De einddatum moet na de begindatum liggen.',true);return;}
   const button=document.getElementById('blockBtn');
   button.disabled=true;
-  const {error}=await db.from('blocked_periods').insert({start_date:s,end_date:e});
+  const {error}=await db.from('blocked_periods').insert({start_date:s,end_date:e,status});
   button.disabled=false;
   if(error){
     const overlap=error.code==='23P01';
@@ -1112,7 +1124,8 @@ async function addBlock() {
     return;
   }
   document.getElementById('bStart').value=''; document.getElementById('bEnd').value='';
-  setAdminMessage('Periode is geblokkeerd en direct zichtbaar voor bezoekers.');
+  const statusLabel=status==='limited'?'beperkt beschikbaar':'niet beschikbaar';
+  setAdminMessage(`Periode staat als ${statusLabel} en is direct zichtbaar voor bezoekers.`);
   await loadBlocks();
 }
 async function delBlock(id) {
@@ -1124,11 +1137,12 @@ async function delBlock(id) {
 }
 function renderBList() {
   const ul=document.getElementById('bList'); ul.innerHTML='';
-  if(!blocked.length){ul.innerHTML='<li style="color:rgba(255,255,255,0.25)">Geen geblokkeerde periodes</li>';return;}
+  if(!blocked.length){ul.innerHTML='<li style="color:rgba(255,255,255,0.25)">Geen aangepaste periodes</li>';return;}
   blocked.forEach(r=>{
     const li=document.createElement('li');
     const label=document.createElement('span');
-    label.textContent=`${r.s} t/m ${r.e}`;
+    const statusLabel=r.status==='limited'?'Beperkt beschikbaar':'Niet beschikbaar';
+    label.textContent=`${r.s} t/m ${r.e} · ${statusLabel}`;
     const button=document.createElement('button');
     button.className='btn-del'; button.type='button'; button.textContent='Verwijder';
     button.addEventListener('click',()=>delBlock(r.id));
@@ -1164,10 +1178,12 @@ function updateSummary() {
     renderCal();
     return;
   }
+  const limited=selStart && hasLimitedAvailability(selStart,selEnd);
+  const limitedNotice=limited?'<br><strong style="color:#ffbf61">Beperkte beschikbaarheid: je aanvraag is pas definitief na onze bevestiging.</strong>':'';
   box.innerHTML=`<strong style="color:white">Jouw reservering</strong><br>
 Periode: ${dur} · Start: ${startStr}${endStr}<br>
 Tarief: €${price}${dc?' + €'+dc+' bezorging':''}<br>
-<strong style="color:#00d4ff">Totaal: €${total} + €250 borg</strong>`;
+<strong style="color:#00d4ff">Totaal: €${total} + €250 borg</strong>${limitedNotice}`;
   renderCal();
 }
 function isRangeAvailable(start,end) {
@@ -1179,6 +1195,15 @@ function isRangeAvailable(start,end) {
   }
   return true;
 }
+function hasLimitedAvailability(start,end) {
+  if(!start||!end) return false;
+  const day=new Date(start);
+  while(day<=end){
+    if(getDateAvailability(day)==='limited') return true;
+    day.setDate(day.getDate()+1);
+  }
+  return false;
+}
 function submitForm() {
   const n=document.getElementById('fName').value.trim();
   const e=document.getElementById('fEmail').value.trim();
@@ -1189,10 +1214,13 @@ function submitForm() {
   if(!isRangeAvailable(selStart,selEnd)){alert('De gekozen huurperiode is niet volledig beschikbaar. Kies een andere startdatum.');return;}
   const [dur,price]=p.split('|');
   const delivery=document.getElementById('fDelivery').value === 'send' ? 'Bezorgen + retour' : 'Ophalen in Almere';
+  const availability=hasLimitedAvailability(selStart,selEnd)
+    ? 'Beperkte beschikbaarheid - definitieve bevestiging vereist'
+    : 'Beschikbaar';
   const dest=document.getElementById('fDest').value.trim() || 'Geen opmerking';
   const subject=encodeURIComponent('Reserveringsaanvraag Starlink Mini');
   const body=encodeURIComponent(
-    `Naam: ${n}\nE-mail: ${e}\nTelefoon: ${phone}\nPeriode: ${dur}\nStartdatum: ${selStart.toLocaleDateString('nl-NL')}\nEinddatum: ${selEnd ? selEnd.toLocaleDateString('nl-NL') : 'Nog afstemmen'}\nTarief: €${price}\nLevering: ${delivery}\nBestemming/opmerking: ${dest}`
+    `Naam: ${n}\nE-mail: ${e}\nTelefoon: ${phone}\nPeriode: ${dur}\nStartdatum: ${selStart.toLocaleDateString('nl-NL')}\nEinddatum: ${selEnd ? selEnd.toLocaleDateString('nl-NL') : 'Nog afstemmen'}\nBeschikbaarheid: ${availability}\nTarief: €${price}\nLevering: ${delivery}\nBestemming/opmerking: ${dest}`
   );
   document.getElementById('formWrap').style.display='none';
   const success=document.getElementById('successMsg');
