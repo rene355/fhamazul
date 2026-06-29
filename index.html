@@ -86,8 +86,34 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 26px;
         }
+
+        .nav-controls { display: flex; align-items: center; gap: 20px; }
+
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding-left: 16px;
+            border-left: 1px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .language-button {
+            width: 34px;
+            height: 34px;
+            padding: 0;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            color: var(--white);
+            background: transparent;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        .language-button:hover { background: rgba(255, 255, 255, 0.14); }
+        .language-button[aria-pressed="true"] { border-color: rgba(255, 255, 255, 0.78); background: rgba(255, 255, 255, 0.12); }
 
         .nav-links a {
             color: var(--white);
@@ -319,6 +345,8 @@
             background: var(--blue-dark);
         }
 
+        .starlink-band[hidden] { display: none; }
+
         .starlink-inner {
             width: min(calc(100% - 48px), var(--max));
             min-height: 220px;
@@ -399,8 +427,12 @@
             .nav { width: min(calc(100% - 32px), var(--max)); height: 74px; }
             .brand img { width: 42px; height: 42px; }
             .brand span { font-size: 18px; }
+            .nav-controls { gap: 10px; }
+            .nav-links { gap: 10px; }
             .nav-links a:not(.nav-cta) { display: none; }
             .nav-cta { padding: 8px 12px; }
+            .language-switcher { gap: 1px; padding-left: 8px; }
+            .language-button { width: 29px; height: 32px; font-size: 16px; }
 
             .hero { min-height: 86vh; background-position: 60% center; }
             .hero::before { background: rgba(5, 24, 31, 0.58); }
@@ -449,6 +481,10 @@
             }
         }
 
+        @media (max-width: 470px) {
+            .brand span { display: none; }
+        }
+
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
             .button { transition: none; }
@@ -456,18 +492,25 @@
     </style>
 </head>
 <body>
-    <a class="skip-link" href="#main">Naar inhoud</a>
+    <a class="skip-link" href="#main" data-i18n="skip">Naar inhoud</a>
 
     <header class="site-header">
-        <nav class="nav" aria-label="Hoofdnavigatie">
+        <nav class="nav" aria-label="Hoofdnavigatie" data-i18n-aria="navLabel">
             <a class="brand" href="#top" aria-label="FHAM Azul, naar boven">
                 <img src="logo.png" alt="">
                 <span>FHAM Azul</span>
             </a>
-            <div class="nav-links">
-                <a href="#expertise">Expertise</a>
-                <a href="#diensten">Zakelijke diensten</a>
-                <a class="nav-cta" href="#contact">Contact</a>
+            <div class="nav-controls">
+                <div class="nav-links">
+                    <a href="#expertise" data-i18n="navExpertise">Expertise</a>
+                    <a href="#diensten" data-i18n="navServices">Zakelijke diensten</a>
+                    <a class="nav-cta" href="#contact" data-i18n="navContact">Contact</a>
+                </div>
+                <div class="language-switcher" aria-label="Kies taal" data-i18n-aria="languageLabel">
+                    <button class="language-button" type="button" data-language="nl" aria-label="Nederlands" aria-pressed="true" title="Nederlands">🇳🇱</button>
+                    <button class="language-button" type="button" data-language="en" aria-label="English" aria-pressed="false" title="English">🇬🇧</button>
+                    <button class="language-button" type="button" data-language="es" aria-label="Español" aria-pressed="false" title="Español">🇪🇸</button>
+                </div>
             </div>
         </nav>
     </header>
@@ -476,12 +519,12 @@
         <section class="hero" id="top">
             <div class="hero-inner">
                 <div class="hero-copy">
-                    <p class="eyebrow">Vastgoed in Spanje</p>
+                    <p class="eyebrow" data-i18n="heroEyebrow">Vastgoed in Spanje</p>
                     <h1>FHAM Azul</h1>
-                    <p class="hero-lead">Lokale expertise en internationale slagkracht voor vastgoed, ondernemerschap en dienstverlening vanuit Spanje.</p>
+                    <p class="hero-lead" data-i18n="heroLead">Lokale expertise en internationale slagkracht voor vastgoed, ondernemerschap en dienstverlening vanuit Spanje.</p>
                     <div class="actions">
-                        <a class="button" href="#contact">Neem contact op</a>
-                        <a class="button secondary" href="#expertise">Ontdek onze expertise</a>
+                        <a class="button" href="#contact" data-i18n="heroContact">Neem contact op</a>
+                        <a class="button secondary" href="#expertise" data-i18n="heroExpertise">Ontdek onze expertise</a>
                     </div>
                 </div>
             </div>
@@ -489,12 +532,12 @@
 
         <section class="section intro" aria-labelledby="intro-title">
             <div>
-                <p class="eyebrow">Over FHAM Azul</p>
-                <h2 id="intro-title">Waarde ontwikkelen met zicht op de lange termijn.</h2>
+                <p class="eyebrow" data-i18n="aboutEyebrow">Over FHAM Azul</p>
+                <h2 id="intro-title" data-i18n="aboutTitle">Waarde ontwikkelen met zicht op de lange termijn.</h2>
             </div>
             <div class="intro-copy">
-                <p>FHAM Azul S.L. is de operationele entiteit binnen de Montevalor groep voor vastgoedactiviteiten in Spanje.</p>
-                <p>Wij verbinden kennis van de lokale markt met een internationale structuur en een scherpe investeringsblik. Zo ontstaan projecten waarin kwaliteit, rendement en duurzame waardecreatie samenkomen.</p>
+                <p data-i18n="aboutP1">FHAM Azul S.L. is de operationele entiteit binnen de Montevalor groep voor vastgoedactiviteiten in Spanje.</p>
+                <p data-i18n="aboutP2">Wij verbinden kennis van de lokale markt met een internationale structuur en een scherpe investeringsblik. Zo ontstaan projecten waarin kwaliteit, rendement en duurzame waardecreatie samenkomen.</p>
             </div>
         </section>
 
@@ -502,31 +545,31 @@
             <div class="section">
                 <div class="expertise-heading">
                     <div>
-                        <p class="eyebrow">Onze expertise</p>
-                        <h2 id="expertise-title">Van kans naar duurzaam resultaat.</h2>
+                        <p class="eyebrow" data-i18n="expertiseEyebrow">Onze expertise</p>
+                        <h2 id="expertise-title" data-i18n="expertiseTitle">Van kans naar duurzaam resultaat.</h2>
                     </div>
-                    <p>Met korte lijnen en diepgaande marktkennis begeleiden we vastgoedvraagstukken van eerste analyse tot uitvoering.</p>
+                    <p data-i18n="expertiseIntro">Met korte lijnen en diepgaande marktkennis begeleiden we vastgoedvraagstukken van eerste analyse tot uitvoering.</p>
                 </div>
                 <div class="expertise-grid">
                     <article class="expertise-item">
                         <span class="expertise-number">01</span>
-                        <h3>Ontwikkeling</h3>
-                        <p>Projecten met aandacht voor locatie, ontwerpkwaliteit en blijvende marktwaarde.</p>
+                        <h3 data-i18n="developmentTitle">Ontwikkeling</h3>
+                        <p data-i18n="developmentText">Projecten met aandacht voor locatie, ontwerpkwaliteit en blijvende marktwaarde.</p>
                     </article>
                     <article class="expertise-item">
                         <span class="expertise-number">02</span>
-                        <h3>Investering</h3>
-                        <p>Weloverwogen vastgoedposities met een heldere balans tussen rendement en risico.</p>
+                        <h3 data-i18n="investmentTitle">Investering</h3>
+                        <p data-i18n="investmentText">Weloverwogen vastgoedposities met een heldere balans tussen rendement en risico.</p>
                     </article>
                     <article class="expertise-item">
                         <span class="expertise-number">03</span>
-                        <h3>Consultancy</h3>
-                        <p>Praktisch advies op basis van lokale ervaring, analyse en internationale context.</p>
+                        <h3 data-i18n="consultancyTitle">Consultancy</h3>
+                        <p data-i18n="consultancyText">Praktisch advies op basis van lokale ervaring, analyse en internationale context.</p>
                     </article>
                     <article class="expertise-item">
                         <span class="expertise-number">04</span>
-                        <h3>Management</h3>
-                        <p>Gerichte aansturing die plannen vertaalt naar voortgang, grip en resultaat.</p>
+                        <h3 data-i18n="managementTitle">Management</h3>
+                        <p data-i18n="managementText">Gerichte aansturing die plannen vertaalt naar voortgang, grip en resultaat.</p>
                     </article>
                 </div>
             </div>
@@ -534,36 +577,36 @@
 
         <section class="section business-services" id="diensten" aria-labelledby="services-title">
             <div>
-                <p class="eyebrow">Zakelijke diensten</p>
-                <h2 id="services-title">Van richting bepalen tot resultaat realiseren.</h2>
+                <p class="eyebrow" data-i18n="servicesEyebrow">Zakelijke diensten</p>
+                <h2 id="services-title" data-i18n="servicesTitle">Van richting bepalen tot resultaat realiseren.</h2>
             </div>
             <div class="service-list">
                 <article class="service-row">
-                    <h3>Consultancy</h3>
-                    <p>Onafhankelijke begeleiding bij complexe vraagstukken, markttoetreding en groei in Spanje.</p>
+                    <h3 data-i18n="consultancyTitle">Consultancy</h3>
+                    <p data-i18n="serviceConsultancy">Onafhankelijke begeleiding bij complexe vraagstukken, markttoetreding en groei in Spanje.</p>
                 </article>
                 <article class="service-row">
-                    <h3>Management</h3>
-                    <p>Tijdelijke of structurele ondersteuning bij organisatie, operatie en uitvoering.</p>
+                    <h3 data-i18n="managementTitle">Management</h3>
+                    <p data-i18n="serviceManagement">Tijdelijke of structurele ondersteuning bij organisatie, operatie en uitvoering.</p>
                 </article>
                 <article class="service-row">
-                    <h3>Businessstrategie</h3>
-                    <p>Een heldere koers, onderbouwde keuzes en een uitvoerbaar plan voor duurzame ontwikkeling.</p>
+                    <h3 data-i18n="strategyTitle">Businessstrategie</h3>
+                    <p data-i18n="serviceStrategy">Een heldere koers, onderbouwde keuzes en een uitvoerbaar plan voor duurzame ontwikkeling.</p>
                 </article>
             </div>
         </section>
 
         <section class="section principles" id="werkwijze" aria-labelledby="principles-title">
             <div>
-                <p class="eyebrow">Onze werkwijze</p>
-                <h2 id="principles-title">Dicht bij de markt. Helder in elke beslissing.</h2>
-                <p>Wij werken vanuit Spanje, kennen de dynamiek ter plaatse en sturen op concrete, meetbare resultaten.</p>
+                <p class="eyebrow" data-i18n="approachEyebrow">Onze werkwijze</p>
+                <h2 id="principles-title" data-i18n="approachTitle">Dicht bij de markt. Helder in elke beslissing.</h2>
+                <p data-i18n="approachText">Wij werken vanuit Spanje, kennen de dynamiek ter plaatse en sturen op concrete, meetbare resultaten.</p>
             </div>
             <div class="principle-list">
-                <div class="principle"><span>01</span><strong>Lokale marktkennis</strong></div>
-                <div class="principle"><span>02</span><strong>Internationale structuur</strong></div>
-                <div class="principle"><span>03</span><strong>Gedisciplineerde uitvoering</strong></div>
-                <div class="principle"><span>04</span><strong>Duurzame waardecreatie</strong></div>
+                <div class="principle"><span>01</span><strong data-i18n="principle1">Lokale marktkennis</strong></div>
+                <div class="principle"><span>02</span><strong data-i18n="principle2">Internationale structuur</strong></div>
+                <div class="principle"><span>03</span><strong data-i18n="principle3">Gedisciplineerde uitvoering</strong></div>
+                <div class="principle"><span>04</span><strong data-i18n="principle4">Duurzame waardecreatie</strong></div>
             </div>
         </section>
 
@@ -582,19 +625,19 @@
         <aside class="mobility" aria-labelledby="mobility-title">
             <div class="mobility-inner">
                 <div>
-                    <p class="eyebrow">Mobiliteitspartner</p>
+                    <p class="eyebrow" data-i18n="mobilityEyebrow">Mobiliteitspartner</p>
                     <h2 id="mobility-title">Top Gear Mobility</h2>
                 </div>
-                <p>Voor parkeeroplossingen en all-inclusive autohuur rond de luchthavens van Alicante en Palma de Mallorca werken wij samen met Top Gear Mobility.</p>
-                <a class="button" href="https://topgearmobility.com" target="_blank" rel="noopener noreferrer">Bekijk mobiliteitsoplossingen</a>
+                <p data-i18n="mobilityText">Voor parkeeroplossingen en all-inclusive autohuur rond de luchthavens van Alicante en Palma de Mallorca werken wij samen met Top Gear Mobility.</p>
+                <a class="button" href="https://topgearmobility.com" target="_blank" rel="noopener noreferrer" data-i18n="mobilityButton">Bekijk mobiliteitsoplossingen</a>
             </div>
         </aside>
 
         <section class="contact" id="contact" aria-labelledby="contact-title">
             <div class="section">
-                <p class="eyebrow">Contact</p>
-                <h2 id="contact-title">Een vastgoedvraagstuk in Spanje?</h2>
-                <p>Maak kennis met FHAM Azul en bespreek de mogelijkheden rechtstreeks met ons team.</p>
+                <p class="eyebrow" data-i18n="contactEyebrow">Contact</p>
+                <h2 id="contact-title" data-i18n="contactTitle">Een vastgoedvraagstuk in Spanje?</h2>
+                <p data-i18n="contactText">Maak kennis met FHAM Azul en bespreek de mogelijkheden rechtstreeks met ons team.</p>
                 <a class="button" href="mailto:info@fhamazul.es">info@fhamazul.es</a>
             </div>
         </section>
@@ -602,9 +645,145 @@
 
     <footer>
         <div class="footer-inner">
-            <span>&copy; 2026 FHAM Azul S.L. · Spanje</span>
+            <span data-i18n="footer">&copy; 2026 FHAM Azul S.L. · Spanje</span>
             <a href="mailto:info@fhamazul.es">info@fhamazul.es</a>
         </div>
     </footer>
+    <script>
+        const translations = {
+            nl: {
+                pageTitle: "FHAM Azul | Vastgoed in Spanje",
+                meta: "FHAM Azul biedt vastgoedontwikkeling, consultancy, management, businessstrategie en Europese connectiviteitsdiensten vanuit Spanje.",
+                skip: "Naar inhoud", navLabel: "Hoofdnavigatie", languageLabel: "Kies taal",
+                navExpertise: "Expertise", navServices: "Zakelijke diensten", navContact: "Contact",
+                heroEyebrow: "Vastgoed in Spanje",
+                heroLead: "Lokale expertise en internationale slagkracht voor vastgoed, ondernemerschap en dienstverlening vanuit Spanje.",
+                heroContact: "Neem contact op", heroExpertise: "Ontdek onze expertise",
+                aboutEyebrow: "Over FHAM Azul", aboutTitle: "Waarde ontwikkelen met zicht op de lange termijn.",
+                aboutP1: "FHAM Azul S.L. is de operationele entiteit binnen de Montevalor groep voor vastgoedactiviteiten in Spanje.",
+                aboutP2: "Wij verbinden kennis van de lokale markt met een internationale structuur en een scherpe investeringsblik. Zo ontstaan projecten waarin kwaliteit, rendement en duurzame waardecreatie samenkomen.",
+                expertiseEyebrow: "Onze expertise", expertiseTitle: "Van kans naar duurzaam resultaat.",
+                expertiseIntro: "Met korte lijnen en diepgaande marktkennis begeleiden we vastgoedvraagstukken van eerste analyse tot uitvoering.",
+                developmentTitle: "Ontwikkeling", developmentText: "Projecten met aandacht voor locatie, ontwerpkwaliteit en blijvende marktwaarde.",
+                investmentTitle: "Investering", investmentText: "Weloverwogen vastgoedposities met een heldere balans tussen rendement en risico.",
+                consultancyTitle: "Consultancy", consultancyText: "Praktisch advies op basis van lokale ervaring, analyse en internationale context.",
+                managementTitle: "Management", managementText: "Gerichte aansturing die plannen vertaalt naar voortgang, grip en resultaat.",
+                servicesEyebrow: "Zakelijke diensten", servicesTitle: "Van richting bepalen tot resultaat realiseren.",
+                serviceConsultancy: "Onafhankelijke begeleiding bij complexe vraagstukken, markttoetreding en groei in Spanje.",
+                serviceManagement: "Tijdelijke of structurele ondersteuning bij organisatie, operatie en uitvoering.",
+                strategyTitle: "Businessstrategie", serviceStrategy: "Een heldere koers, onderbouwde keuzes en een uitvoerbaar plan voor duurzame ontwikkeling.",
+                approachEyebrow: "Onze werkwijze", approachTitle: "Dicht bij de markt. Helder in elke beslissing.",
+                approachText: "Wij werken vanuit Spanje, kennen de dynamiek ter plaatse en sturen op concrete, meetbare resultaten.",
+                principle1: "Lokale marktkennis", principle2: "Internationale structuur", principle3: "Gedisciplineerde uitvoering", principle4: "Duurzame waardecreatie",
+                mobilityEyebrow: "Mobiliteitspartner",
+                mobilityText: "Voor parkeeroplossingen en all-inclusive autohuur rond de luchthavens van Alicante en Palma de Mallorca werken wij samen met Top Gear Mobility.",
+                mobilityButton: "Bekijk mobiliteitsoplossingen",
+                contactEyebrow: "Contact", contactTitle: "Een vastgoedvraagstuk in Spanje?",
+                contactText: "Maak kennis met FHAM Azul en bespreek de mogelijkheden rechtstreeks met ons team.",
+                footer: "© 2026 FHAM Azul S.L. · Spanje"
+            },
+            en: {
+                pageTitle: "FHAM Azul | Real Estate and Business in Spain",
+                meta: "FHAM Azul provides real estate development, consultancy, management and business strategy services from Spain.",
+                skip: "Skip to content", navLabel: "Main navigation", languageLabel: "Choose language",
+                navExpertise: "Expertise", navServices: "Business services", navContact: "Contact",
+                heroEyebrow: "Real estate in Spain",
+                heroLead: "Local expertise and international strength for real estate, entrepreneurship and business services from Spain.",
+                heroContact: "Contact us", heroExpertise: "Explore our expertise",
+                aboutEyebrow: "About FHAM Azul", aboutTitle: "Creating value with a long-term perspective.",
+                aboutP1: "FHAM Azul S.L. is the Montevalor group's operating entity for real estate activities in Spain.",
+                aboutP2: "We combine local market knowledge with an international structure and a disciplined investment perspective. The result is a portfolio where quality, returns and sustainable value creation come together.",
+                expertiseEyebrow: "Our expertise", expertiseTitle: "From opportunity to lasting results.",
+                expertiseIntro: "With direct communication and in-depth market knowledge, we guide real estate projects from initial analysis through execution.",
+                developmentTitle: "Development", developmentText: "Projects shaped by location, design quality and enduring market value.",
+                investmentTitle: "Investment", investmentText: "Considered real estate positions with a clear balance between return and risk.",
+                consultancyTitle: "Consultancy", consultancyText: "Practical advice grounded in local experience, analysis and international context.",
+                managementTitle: "Management", managementText: "Focused leadership that turns plans into progress, control and results.",
+                servicesEyebrow: "Business services", servicesTitle: "From setting direction to delivering results.",
+                serviceConsultancy: "Independent guidance for complex challenges, market entry and growth in Spain.",
+                serviceManagement: "Temporary or ongoing support for organisation, operations and delivery.",
+                strategyTitle: "Business strategy", serviceStrategy: "A clear direction, informed decisions and an actionable plan for sustainable growth.",
+                approachEyebrow: "Our approach", approachTitle: "Close to the market. Clear in every decision.",
+                approachText: "We operate from Spain, understand the dynamics on the ground and focus on concrete, measurable results.",
+                principle1: "Local market knowledge", principle2: "International structure", principle3: "Disciplined execution", principle4: "Sustainable value creation",
+                mobilityEyebrow: "Mobility partner",
+                mobilityText: "For parking solutions and all-inclusive car hire around Alicante and Palma de Mallorca airports, we partner with Top Gear Mobility.",
+                mobilityButton: "Explore mobility solutions",
+                contactEyebrow: "Contact", contactTitle: "A real estate or business challenge in Spain?",
+                contactText: "Meet FHAM Azul and discuss the possibilities directly with our team.",
+                footer: "© 2026 FHAM Azul S.L. · Spain"
+            },
+            es: {
+                pageTitle: "FHAM Azul | Inmobiliaria y Negocios en España",
+                meta: "FHAM Azul ofrece desarrollo inmobiliario, consultoría, gestión y estrategia empresarial desde España.",
+                skip: "Ir al contenido", navLabel: "Navegación principal", languageLabel: "Elegir idioma",
+                navExpertise: "Experiencia", navServices: "Servicios empresariales", navContact: "Contacto",
+                heroEyebrow: "Inmobiliaria en España",
+                heroLead: "Experiencia local y alcance internacional para el sector inmobiliario, el emprendimiento y los servicios empresariales desde España.",
+                heroContact: "Contactar", heroExpertise: "Descubra nuestra experiencia",
+                aboutEyebrow: "Sobre FHAM Azul", aboutTitle: "Crear valor con una visión a largo plazo.",
+                aboutP1: "FHAM Azul S.L. es la entidad operativa del grupo Montevalor para sus actividades inmobiliarias en España.",
+                aboutP2: "Combinamos el conocimiento del mercado local con una estructura internacional y una rigurosa visión inversora. Así creamos proyectos donde confluyen calidad, rentabilidad y valor sostenible.",
+                expertiseEyebrow: "Nuestra experiencia", expertiseTitle: "De la oportunidad al resultado sostenible.",
+                expertiseIntro: "Con comunicación directa y un profundo conocimiento del mercado, acompañamos proyectos inmobiliarios desde el análisis inicial hasta su ejecución.",
+                developmentTitle: "Desarrollo", developmentText: "Proyectos centrados en la ubicación, la calidad del diseño y el valor de mercado a largo plazo.",
+                investmentTitle: "Inversión", investmentText: "Posiciones inmobiliarias bien fundamentadas con un equilibrio claro entre rentabilidad y riesgo.",
+                consultancyTitle: "Consultoría", consultancyText: "Asesoramiento práctico basado en experiencia local, análisis y contexto internacional.",
+                managementTitle: "Gestión", managementText: "Dirección enfocada que convierte los planes en progreso, control y resultados.",
+                servicesEyebrow: "Servicios empresariales", servicesTitle: "De definir el rumbo a conseguir resultados.",
+                serviceConsultancy: "Acompañamiento independiente en retos complejos, entrada al mercado y crecimiento en España.",
+                serviceManagement: "Apoyo temporal o permanente en organización, operaciones y ejecución.",
+                strategyTitle: "Estrategia empresarial", serviceStrategy: "Un rumbo claro, decisiones fundamentadas y un plan viable para un crecimiento sostenible.",
+                approachEyebrow: "Nuestra forma de trabajar", approachTitle: "Cerca del mercado. Claros en cada decisión.",
+                approachText: "Trabajamos desde España, conocemos la dinámica local y nos centramos en resultados concretos y medibles.",
+                principle1: "Conocimiento del mercado local", principle2: "Estructura internacional", principle3: "Ejecución disciplinada", principle4: "Creación de valor sostenible",
+                mobilityEyebrow: "Socio de movilidad",
+                mobilityText: "Para soluciones de aparcamiento y alquiler de coches todo incluido en los aeropuertos de Alicante y Palma de Mallorca, colaboramos con Top Gear Mobility.",
+                mobilityButton: "Ver soluciones de movilidad",
+                contactEyebrow: "Contacto", contactTitle: "¿Un proyecto inmobiliario o empresarial en España?",
+                contactText: "Conozca FHAM Azul y hable directamente con nuestro equipo sobre las posibilidades.",
+                footer: "© 2026 FHAM Azul S.L. · España"
+            }
+        };
+
+        const languageButtons = document.querySelectorAll("[data-language]");
+        const starlinkSection = document.querySelector(".starlink-band");
+        const description = document.querySelector('meta[name="description"]');
+
+        function setLanguage(language, updateUrl = true) {
+            const activeLanguage = translations[language] ? language : "nl";
+            const copy = translations[activeLanguage];
+            document.documentElement.lang = activeLanguage;
+            document.title = copy.pageTitle;
+            description.setAttribute("content", copy.meta);
+            document.querySelectorAll("[data-i18n]").forEach((element) => {
+                const value = copy[element.dataset.i18n];
+                if (value) element.textContent = value;
+            });
+            document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
+                const value = copy[element.dataset.i18nAria];
+                if (value) element.setAttribute("aria-label", value);
+            });
+            languageButtons.forEach((button) => {
+                button.setAttribute("aria-pressed", String(button.dataset.language === activeLanguage));
+            });
+            starlinkSection.hidden = activeLanguage !== "nl";
+            try { localStorage.setItem("fham-language", activeLanguage); } catch (error) {}
+            if (updateUrl) {
+                const url = new URL(window.location.href);
+                url.searchParams.set("lang", activeLanguage);
+                history.replaceState(null, "", url);
+            }
+        }
+
+        languageButtons.forEach((button) => {
+            button.addEventListener("click", () => setLanguage(button.dataset.language));
+        });
+
+        const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
+        let savedLanguage = "nl";
+        try { savedLanguage = localStorage.getItem("fham-language") || "nl"; } catch (error) {}
+        setLanguage(requestedLanguage || savedLanguage, false);
+    </script>
 </body>
 </html>
