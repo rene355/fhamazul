@@ -407,9 +407,72 @@
             background: #0a222c;
         }
 
-        .footer-inner {
+        .footer-main {
             width: min(calc(100% - 48px), var(--max));
-            min-height: 110px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            align-items: center;
+            gap: clamp(50px, 9vw, 120px);
+            padding: 72px 0 54px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .footer-brand img {
+            width: 62px;
+            height: 62px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.92);
+        }
+
+        .footer-brand strong {
+            display: block;
+            color: var(--white);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 25px;
+            font-weight: 400;
+        }
+
+        .footer-brand span { color: #91a5ac; font-size: 12px; }
+
+        .footer-offices-label {
+            margin: 0 0 20px;
+            color: #91a5ac;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .footer-offices {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .footer-office {
+            padding-left: 24px;
+            border-left: 2px solid var(--blue);
+        }
+
+        .footer-office h3 {
+            margin: 0 0 3px;
+            color: var(--white);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .footer-office p { margin: 0; color: #91a5ac; font-size: 13px; }
+
+        .footer-bottom {
+            width: min(calc(100% - 48px), var(--max));
+            min-height: 88px;
             margin: 0 auto;
             display: flex;
             align-items: center;
@@ -418,8 +481,8 @@
             font-size: 13px;
         }
 
-        .footer-inner a { text-decoration: none; }
-        .footer-inner a:hover { text-decoration: underline; }
+        .footer-bottom a { text-decoration: none; }
+        .footer-bottom a:hover { text-decoration: underline; }
 
         :focus-visible { outline: 3px solid #7bd4f5; outline-offset: 4px; }
 
@@ -471,13 +534,20 @@
                 padding: 54px 0;
             }
 
-            .footer-inner {
+            .footer-main {
                 width: min(calc(100% - 32px), var(--max));
-                min-height: 130px;
+                grid-template-columns: 1fr;
+                gap: 42px;
+                padding: 58px 0 42px;
+            }
+
+            .footer-bottom {
+                width: min(calc(100% - 32px), var(--max));
+                min-height: 110px;
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: center;
-                gap: 8px;
+                gap: 6px;
             }
         }
 
@@ -644,7 +714,29 @@
     </main>
 
     <footer>
-        <div class="footer-inner">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <img src="logo.png" alt="">
+                <div>
+                    <strong>FHAM Azul</strong>
+                    <span data-i18n="footerDescriptor">Real estate · Consultancy · Management</span>
+                </div>
+            </div>
+            <div>
+                <p class="footer-offices-label" data-i18n="officesLabel">Onze locaties</p>
+                <div class="footer-offices">
+                    <div class="footer-office">
+                        <h3>Almere</h3>
+                        <p data-i18n="countryNetherlands">Nederland</p>
+                    </div>
+                    <div class="footer-office">
+                        <h3>Altea</h3>
+                        <p data-i18n="countrySpain">Spanje</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
             <span data-i18n="footer">&copy; 2026 FHAM Azul S.L. · Spanje</span>
             <a href="mailto:info@fhamazul.es">info@fhamazul.es</a>
         </div>
@@ -680,6 +772,8 @@
                 mobilityButton: "Bekijk mobiliteitsoplossingen",
                 contactEyebrow: "Contact", contactTitle: "Een vastgoedvraagstuk in Spanje?",
                 contactText: "Maak kennis met FHAM Azul en bespreek de mogelijkheden rechtstreeks met ons team.",
+                footerDescriptor: "Vastgoed · Consultancy · Management", officesLabel: "Onze locaties",
+                countryNetherlands: "Nederland", countrySpain: "Spanje",
                 footer: "© 2026 FHAM Azul S.L. · Spanje"
             },
             en: {
@@ -711,6 +805,8 @@
                 mobilityButton: "Explore mobility solutions",
                 contactEyebrow: "Contact", contactTitle: "A real estate or business challenge in Spain?",
                 contactText: "Meet FHAM Azul and discuss the possibilities directly with our team.",
+                footerDescriptor: "Real estate · Consultancy · Management", officesLabel: "Our locations",
+                countryNetherlands: "The Netherlands", countrySpain: "Spain",
                 footer: "© 2026 FHAM Azul S.L. · Spain"
             },
             es: {
@@ -742,6 +838,8 @@
                 mobilityButton: "Ver soluciones de movilidad",
                 contactEyebrow: "Contacto", contactTitle: "¿Un proyecto inmobiliario o empresarial en España?",
                 contactText: "Conozca FHAM Azul y hable directamente con nuestro equipo sobre las posibilidades.",
+                footerDescriptor: "Inmobiliaria · Consultoría · Gestión", officesLabel: "Nuestras ubicaciones",
+                countryNetherlands: "Países Bajos", countrySpain: "España",
                 footer: "© 2026 FHAM Azul S.L. · España"
             }
         };
