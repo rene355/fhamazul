@@ -2,144 +2,609 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>FHAM Azul</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description" content="FHAM Azul biedt vastgoedontwikkeling, consultancy, management, businessstrategie en Europese connectiviteitsdiensten vanuit Spanje.">
+    <meta name="theme-color" content="#102c38">
+    <title>FHAM Azul | Vastgoed in Spanje</title>
     <style>
+        :root {
+            --ink: #102c38;
+            --ink-soft: #41545c;
+            --blue: #148fc4;
+            --blue-dark: #0b6c96;
+            --paper: #f7f8f5;
+            --white: #ffffff;
+            --line: #dce3e2;
+            --olive: #71806a;
+            --max: 1180px;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
         body {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            background: linear-gradient(135deg, #0a2540, #1b6ca8, #4da8da);
-            color: white;
+            color: var(--ink);
+            background: var(--paper);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        a { color: inherit; }
+
+        img { display: block; max-width: 100%; }
+
+        .skip-link {
+            position: fixed;
+            top: -80px;
+            left: 18px;
+            z-index: 100;
+            padding: 10px 16px;
+            color: var(--white);
+            background: var(--ink);
+        }
+
+        .skip-link:focus { top: 18px; }
+
+        .site-header {
+            position: absolute;
+            inset: 0 0 auto;
+            z-index: 20;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .nav {
+            width: min(calc(100% - 48px), var(--max));
+            height: 88px;
+            margin: 0 auto;
             display: flex;
-            justify-content: center;
             align-items: center;
-            height: 100vh;
-            text-align: center;
+            justify-content: space-between;
+            gap: 28px;
         }
 
-        .container {
-            backdrop-filter: blur(20px);
-            background: rgba(255,255,255,0.08);
-            padding: 50px 40px;
-            border-radius: 20px;
-            max-width: 700px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            animation: fadeIn 1.2s ease;
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--white);
+            text-decoration: none;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 21px;
+            line-height: 1;
         }
 
-        img {
-            max-width: 180px;
-            margin-bottom: 25px;
+        .brand img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus-visible { text-decoration: underline; text-underline-offset: 5px; }
+
+        .nav-cta {
+            padding: 10px 17px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 4px;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            background: #1b3037 url("fham-azul-hero.jpg") center center / cover no-repeat;
+            isolation: isolate;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: rgba(5, 24, 31, 0.42);
+        }
+
+        .hero-inner {
+            width: min(calc(100% - 48px), var(--max));
+            margin: 0 auto;
+            padding: 150px 0 92px;
+        }
+
+        .hero-copy { max-width: 690px; }
+
+        .eyebrow {
+            margin: 0 0 18px;
+            color: inherit;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            display: inline-block;
+            width: 34px;
+            height: 2px;
+            margin: 0 12px 3px 0;
+            background: currentColor;
+        }
+
+        h1, h2, h3, p { margin-top: 0; }
+
+        h1, h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: 400;
+            line-height: 1.08;
+            letter-spacing: 0;
         }
 
         h1 {
-            font-size: 36px;
-            font-weight: 300;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
+            margin-bottom: 22px;
+            font-size: clamp(48px, 7vw, 82px);
         }
 
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            opacity: 0.9;
-            margin-bottom: 30px;
+        .hero-lead {
+            max-width: 610px;
+            margin-bottom: 34px;
+            font-size: clamp(19px, 2.2vw, 25px);
+            line-height: 1.45;
         }
 
-        .highlight {
-            font-weight: 600;
-            color: #ffffff;
-        }
+        .actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
-        .email {
-            display: inline-block;
-            padding: 12px 24px;
-            border-radius: 30px;
-            background: rgba(255,255,255,0.15);
-            text-decoration: none;
-            color: white;
-            transition: 0.3s;
-        }
-
-        .email:hover {
-            background: rgba(255,255,255,0.3);
-        }
-
-        .actions {
-            display: flex;
+        .button {
+            display: inline-flex;
+            min-height: 48px;
+            align-items: center;
             justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
+            padding: 12px 22px;
+            border: 1px solid var(--white);
+            border-radius: 4px;
+            color: var(--ink);
+            background: var(--white);
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 160ms ease, color 160ms ease, transform 160ms ease;
         }
 
-        .starlink {
-            background: white;
-            color: #0a2540;
-            font-weight: 600;
+        .button:hover { transform: translateY(-2px); }
+
+        .button.secondary { color: var(--white); background: transparent; }
+        .button.secondary:hover { color: var(--ink); background: var(--white); }
+
+        .section {
+            width: min(calc(100% - 48px), var(--max));
+            margin: 0 auto;
+            padding: 104px 0;
         }
 
-        .starlink:hover {
-            background: #eaf7ff;
+        .intro {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: clamp(50px, 9vw, 120px);
+            align-items: start;
         }
 
-        .footer {
-            margin-top: 30px;
-            font-size: 14px;
-            opacity: 0.7;
+        .section h2 {
+            margin-bottom: 24px;
+            font-size: clamp(35px, 5vw, 55px);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px);}
-            to { opacity: 1; transform: translateY(0);}
+        .intro-copy {
+            padding-top: 34px;
+            color: var(--ink-soft);
+            font-size: 18px;
         }
 
-        @media (max-width: 600px) {
-            .container {
-                padding: 30px 20px;
+        .intro-copy p:last-child { margin-bottom: 0; }
+
+        .expertise-band {
+            color: var(--white);
+            background: var(--ink);
+        }
+
+        .expertise-band .section { padding-top: 88px; padding-bottom: 88px; }
+
+        .expertise-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 55px;
+        }
+
+        .expertise-heading h2 { max-width: 600px; margin-bottom: 0; }
+
+        .expertise-heading p {
+            max-width: 410px;
+            margin-bottom: 6px;
+            color: #c8d3d6;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .expertise-item {
+            min-height: 250px;
+            padding: 30px 34px 20px 0;
+            border-right: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .expertise-item + .expertise-item { padding-left: 34px; }
+        .expertise-item:last-child { border-right: 0; }
+
+        .expertise-number { color: #77c8e8; font-size: 13px; font-weight: 700; }
+
+        .expertise-item h3 {
+            margin: 52px 0 12px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 26px;
+            font-weight: 400;
+        }
+
+        .expertise-item p { color: #c8d3d6; }
+
+        .business-services {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: clamp(50px, 9vw, 120px);
+            align-items: start;
+        }
+
+        .service-list { border-top: 1px solid var(--line); }
+
+        .service-row {
+            display: grid;
+            grid-template-columns: 170px 1fr;
+            gap: 28px;
+            padding: 28px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .service-row h3 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 22px;
+            font-weight: 400;
+        }
+
+        .service-row p { margin: 0; color: var(--ink-soft); }
+
+        .principles {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(50px, 9vw, 120px);
+            align-items: center;
+        }
+
+        .principle-list { border-top: 1px solid var(--line); }
+
+        .principle {
+            display: grid;
+            grid-template-columns: 42px 1fr;
+            gap: 18px;
+            padding: 22px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .principle span { color: var(--blue-dark); font-weight: 700; }
+        .principle strong { font-size: 18px; }
+
+        .starlink-band {
+            color: var(--white);
+            background: var(--blue-dark);
+        }
+
+        .starlink-inner {
+            width: min(calc(100% - 48px), var(--max));
+            min-height: 220px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 40px;
+            padding: 56px 0;
+        }
+
+        .starlink-inner h2 { margin-bottom: 10px; font-size: clamp(30px, 4vw, 43px); }
+        .starlink-inner p { max-width: 690px; margin-bottom: 0; color: #d9eff8; }
+
+        .starlink-inner .disclaimer {
+            margin-top: 16px;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .mobility {
+            background: #e8efec;
+        }
+
+        .mobility-inner {
+            width: min(calc(100% - 48px), var(--max));
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr auto;
+            align-items: center;
+            gap: 48px;
+            padding: 62px 0;
+        }
+
+        .mobility-inner h2 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(29px, 4vw, 42px);
+            font-weight: 400;
+            line-height: 1.1;
+        }
+
+        .mobility-inner p { margin: 0; color: var(--ink-soft); }
+        .mobility .button { color: var(--white); border-color: var(--ink); background: var(--ink); }
+
+        .contact {
+            text-align: center;
+            background: var(--white);
+        }
+
+        .contact .section { max-width: 820px; }
+        .contact p { margin-bottom: 30px; color: var(--ink-soft); font-size: 18px; }
+        .contact .button { color: var(--white); border-color: var(--ink); background: var(--ink); }
+
+        footer {
+            color: #cfdbde;
+            background: #0a222c;
+        }
+
+        .footer-inner {
+            width: min(calc(100% - 48px), var(--max));
+            min-height: 110px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 28px;
+            font-size: 13px;
+        }
+
+        .footer-inner a { text-decoration: none; }
+        .footer-inner a:hover { text-decoration: underline; }
+
+        :focus-visible { outline: 3px solid #7bd4f5; outline-offset: 4px; }
+
+        @media (max-width: 760px) {
+            .nav { width: min(calc(100% - 32px), var(--max)); height: 74px; }
+            .brand img { width: 42px; height: 42px; }
+            .brand span { font-size: 18px; }
+            .nav-links a:not(.nav-cta) { display: none; }
+            .nav-cta { padding: 8px 12px; }
+
+            .hero { min-height: 86vh; background-position: 60% center; }
+            .hero::before { background: rgba(5, 24, 31, 0.58); }
+            .hero-inner { width: min(calc(100% - 32px), var(--max)); padding: 124px 0 64px; }
+            h1 { font-size: 50px; }
+
+            .section { width: min(calc(100% - 32px), var(--max)); padding: 72px 0; }
+            .intro, .principles, .business-services { grid-template-columns: 1fr; gap: 22px; }
+            .intro-copy { padding-top: 0; }
+
+            .expertise-heading { display: block; margin-bottom: 38px; }
+            .expertise-heading h2 { margin-bottom: 20px; }
+            .expertise-grid { grid-template-columns: 1fr; }
+            .expertise-item,
+            .expertise-item + .expertise-item {
+                min-height: 0;
+                padding: 24px 0;
+                border-right: 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+            }
+            .expertise-item:last-child { border-bottom: 0; }
+            .expertise-item h3 { margin: 24px 0 8px; }
+
+            .service-row { grid-template-columns: 1fr; gap: 8px; }
+
+            .starlink-inner {
+                width: min(calc(100% - 32px), var(--max));
+                grid-template-columns: 1fr;
+                gap: 25px;
             }
 
-            h1 {
-                font-size: 28px;
+            .mobility-inner {
+                width: min(calc(100% - 32px), var(--max));
+                grid-template-columns: 1fr;
+                gap: 22px;
+                padding: 54px 0;
             }
 
-            p {
-                font-size: 16px;
+            .footer-inner {
+                width: min(calc(100% - 32px), var(--max));
+                min-height: 130px;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 8px;
             }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .button { transition: none; }
         }
     </style>
 </head>
-
 <body>
+    <a class="skip-link" href="#main">Naar inhoud</a>
 
-<div class="container">
+    <header class="site-header">
+        <nav class="nav" aria-label="Hoofdnavigatie">
+            <a class="brand" href="#top" aria-label="FHAM Azul, naar boven">
+                <img src="logo.png" alt="">
+                <span>FHAM Azul</span>
+            </a>
+            <div class="nav-links">
+                <a href="#expertise">Expertise</a>
+                <a href="#diensten">Zakelijke diensten</a>
+                <a class="nav-cta" href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
 
-    <img src="data:image/png;base64,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k2KGaRQyMcW5189uE4s00TOZVFChbWU3ntCQbVfIXvZ92crAd1RtwU9RvLjqKqL6GkuZOzW34U7MFsGyRbAiCcMQvEdRErPMgx5Hz7F8BYevAj7GtR0cTe43W1JDYa/86yPb5s6dNPEb9znn5QvZc+HhCE9Wu1KXF0rPNXKm/u+puP7E2tfuf5NqDy3ji7iZMc3/JCbn7pIKWaJNyR5MXgh6wKgfGZ25WNeRz8JrfKqU/IrPW9joPTpNCdcSKj8fPASoejx9fTZJ1b0FhyYyUTX24CHAb8oEmAATYAJMgAkwASbABJgAE2ACTIAJMAEmwASYABNgAkyACTABJsAEmAATYAJMgAkwASbABJgAE2ACTIAJMAEmwASYABNgAkyACTABJsAEmAATYAJMgAkwASbABJgAE2ACTIAJMAEmwASYABNgAkyACTABJsAEmAATYAJMgAkwASbABJgAE2ACTIAJMAEmwASYABNgAkyACTABJsAEmAATYAJMgAkwASbABJgAE2ACTIAJMAEmwASYABNgAkyACTABJsAEmAATYAJMgAkwASbABJgAE2ACTIAJMAEmwASYABNgAkyACTABJsAEmAATYAJMgAkwASbABJgAE2ACTIAJMAEmwASYABNgAkyACTABJsAEmAATYAJMgAkwASbABJgAE2ACTIAJMAEmwASYABNgAkyACTABJsAEmAATYAJMgAkwASbABJgAE2ACTIAJMAEmwASYABNgAkyACTABJsAEmAATYAJMgAkwASbABJgAE2ACTIAJMAEmwASYABNgAkyACTABJsAEmAATYAL/Xwj8H7NZ0hzOAyzhAAAAAElFTkSuQmCC" alt="FHAM Azul logo">
+    <main id="main">
+        <section class="hero" id="top">
+            <div class="hero-inner">
+                <div class="hero-copy">
+                    <p class="eyebrow">Vastgoed in Spanje</p>
+                    <h1>FHAM Azul</h1>
+                    <p class="hero-lead">Lokale expertise en internationale slagkracht voor vastgoed, ondernemerschap en dienstverlening vanuit Spanje.</p>
+                    <div class="actions">
+                        <a class="button" href="#contact">Neem contact op</a>
+                        <a class="button secondary" href="#expertise">Ontdek onze expertise</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <h1>FHAM Azul</h1>
+        <section class="section intro" aria-labelledby="intro-title">
+            <div>
+                <p class="eyebrow">Over FHAM Azul</p>
+                <h2 id="intro-title">Waarde ontwikkelen met zicht op de lange termijn.</h2>
+            </div>
+            <div class="intro-copy">
+                <p>FHAM Azul S.L. is de operationele entiteit binnen de Montevalor groep voor vastgoedactiviteiten in Spanje.</p>
+                <p>Wij verbinden kennis van de lokale markt met een internationale structuur en een scherpe investeringsblik. Zo ontstaan projecten waarin kwaliteit, rendement en duurzame waardecreatie samenkomen.</p>
+            </div>
+        </section>
 
-    <p>
-        FHAM Azul S.L. is gespecialiseerd in <span class="highlight">vastgoedontwikkeling, investering en consultancy</span> in Spanje.
-    </p>
+        <section class="expertise-band" id="expertise" aria-labelledby="expertise-title">
+            <div class="section">
+                <div class="expertise-heading">
+                    <div>
+                        <p class="eyebrow">Onze expertise</p>
+                        <h2 id="expertise-title">Van kans naar duurzaam resultaat.</h2>
+                    </div>
+                    <p>Met korte lijnen en diepgaande marktkennis begeleiden we vastgoedvraagstukken van eerste analyse tot uitvoering.</p>
+                </div>
+                <div class="expertise-grid">
+                    <article class="expertise-item">
+                        <span class="expertise-number">01</span>
+                        <h3>Ontwikkeling</h3>
+                        <p>Projecten met aandacht voor locatie, ontwerpkwaliteit en blijvende marktwaarde.</p>
+                    </article>
+                    <article class="expertise-item">
+                        <span class="expertise-number">02</span>
+                        <h3>Investering</h3>
+                        <p>Weloverwogen vastgoedposities met een heldere balans tussen rendement en risico.</p>
+                    </article>
+                    <article class="expertise-item">
+                        <span class="expertise-number">03</span>
+                        <h3>Consultancy</h3>
+                        <p>Praktisch advies op basis van lokale ervaring, analyse en internationale context.</p>
+                    </article>
+                    <article class="expertise-item">
+                        <span class="expertise-number">04</span>
+                        <h3>Management</h3>
+                        <p>Gerichte aansturing die plannen vertaalt naar voortgang, grip en resultaat.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-    <p>
-        Als operationele entiteit binnen de <span class="highlight">Montevalor groep</span> combineren wij lokale expertise met internationale structuur en kapitaal.
-    </p>
+        <section class="section business-services" id="diensten" aria-labelledby="services-title">
+            <div>
+                <p class="eyebrow">Zakelijke diensten</p>
+                <h2 id="services-title">Van richting bepalen tot resultaat realiseren.</h2>
+            </div>
+            <div class="service-list">
+                <article class="service-row">
+                    <h3>Consultancy</h3>
+                    <p>Onafhankelijke begeleiding bij complexe vraagstukken, markttoetreding en groei in Spanje.</p>
+                </article>
+                <article class="service-row">
+                    <h3>Management</h3>
+                    <p>Tijdelijke of structurele ondersteuning bij organisatie, operatie en uitvoering.</p>
+                </article>
+                <article class="service-row">
+                    <h3>Businessstrategie</h3>
+                    <p>Een heldere koers, onderbouwde keuzes en een uitvoerbaar plan voor duurzame ontwikkeling.</p>
+                </article>
+            </div>
+        </section>
 
-    <p>
-        Onze focus ligt op kwaliteit, rendement en duurzame waardecreatie in de Spaanse vastgoedmarkt.
-    </p>
+        <section class="section principles" id="werkwijze" aria-labelledby="principles-title">
+            <div>
+                <p class="eyebrow">Onze werkwijze</p>
+                <h2 id="principles-title">Dicht bij de markt. Helder in elke beslissing.</h2>
+                <p>Wij werken vanuit Spanje, kennen de dynamiek ter plaatse en sturen op concrete, meetbare resultaten.</p>
+            </div>
+            <div class="principle-list">
+                <div class="principle"><span>01</span><strong>Lokale marktkennis</strong></div>
+                <div class="principle"><span>02</span><strong>Internationale structuur</strong></div>
+                <div class="principle"><span>03</span><strong>Gedisciplineerde uitvoering</strong></div>
+                <div class="principle"><span>04</span><strong>Duurzame waardecreatie</strong></div>
+            </div>
+        </section>
 
-    <div class="actions">
-        <a class="email" href="mailto:info@fhamazul.es">Contact opnemen</a>
-        <a class="email starlink" href="./starlink/">Starlink Mini huren</a>
-    </div>
+        <aside class="starlink-band" aria-labelledby="starlink-title">
+            <div class="starlink-inner">
+                <div>
+                    <p class="eyebrow">Connectiviteit op locatie</p>
+                    <h2 id="starlink-title">Starlink Service Europa</h2>
+                    <p>Betrouwbaar satellietinternet voor tijdelijk gebruik op locatie, beschikbaar in heel Europa.</p>
+                    <p class="disclaimer">FHAM Azul is een onafhankelijke dienstverlener en is niet gelieerd aan, geautoriseerd door of onderdeel van SpaceX of Starlink.</p>
+                </div>
+                <a class="button" href="./starlink/">Naar Starlink Service</a>
+            </div>
+        </aside>
 
-    <div class="footer">
-        © FHAM Azul S.L. · Spain
-    </div>
+        <aside class="mobility" aria-labelledby="mobility-title">
+            <div class="mobility-inner">
+                <div>
+                    <p class="eyebrow">Mobiliteitspartner</p>
+                    <h2 id="mobility-title">Top Gear Mobility</h2>
+                </div>
+                <p>Voor parkeeroplossingen en all-inclusive autohuur rond de luchthavens van Alicante en Palma de Mallorca werken wij samen met Top Gear Mobility.</p>
+                <a class="button" href="https://topgearmobility.com" target="_blank" rel="noopener noreferrer">Bekijk mobiliteitsoplossingen</a>
+            </div>
+        </aside>
 
-</div>
+        <section class="contact" id="contact" aria-labelledby="contact-title">
+            <div class="section">
+                <p class="eyebrow">Contact</p>
+                <h2 id="contact-title">Een vastgoedvraagstuk in Spanje?</h2>
+                <p>Maak kennis met FHAM Azul en bespreek de mogelijkheden rechtstreeks met ons team.</p>
+                <a class="button" href="mailto:info@fhamazul.es">info@fhamazul.es</a>
+            </div>
+        </section>
+    </main>
 
+    <footer>
+        <div class="footer-inner">
+            <span>&copy; 2026 FHAM Azul S.L. · Spanje</span>
+            <a href="mailto:info@fhamazul.es">info@fhamazul.es</a>
+        </div>
+    </footer>
 </body>
 </html>
