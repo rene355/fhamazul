@@ -883,5 +883,8 @@
         try { savedLanguage = localStorage.getItem("fham-language") || "nl"; } catch (error) {}
         setLanguage(requestedLanguage || savedLanguage, false);
     </script>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"92803b5ffe8c463c900cba68e0395a11"}'></script>
+    <!-- End Cloudflare Web Analytics -->
 </body>
 </html>
