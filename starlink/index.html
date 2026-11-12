@@ -6,7 +6,7 @@
 <meta name="description" content="Huur een Starlink Mini voor vakantie, camper, boot, remote werk of events. Unlimited data in 40+ Europese landen, inclusief 12V adapter en compleet plug & play pakket.">
 <meta name="theme-color" content="#000000">
 <meta property="og:title" content="Starlink Mini huren voor snel internet onderweg">
-<meta property="og:description" content="Razendsnel satellietinternet voor camping, boot, vakantiehuis en remote werk. Vanaf €7 per dag, inclusief Europees netwerk en unlimited data.">
+<meta property="og:description" content="Razendsnel satellietinternet voor camping, boot, vakantiehuis en remote werk. Black Friday: €4,50 per dag bij 4 weken, inclusief Europees netwerk en unlimited data.">
 <meta property="og:type" content="website">
 <title>Starlink Mini huren | Satellietinternet voor vakantie, camper en boot</title>
 <style>
@@ -20,8 +20,8 @@
     --gray-800: #222222;
     --signal: #00d4ff;
     --signal-dim: rgba(0,212,255,0.13);
-    --halloween: #ff8a1f;
-    --halloween-soft: rgba(255,138,31,0.14);
+    --offer-accent: #55de9f;
+    --offer-accent-soft: rgba(85,222,159,0.14);
     --radius: 12px;
     --radius-sm: 6px;
   }
@@ -97,7 +97,7 @@
   .hero-bg {
     position: absolute; inset: 0; z-index: 0;
     background:
-      radial-gradient(ellipse 45% 38% at 12% 18%, rgba(255,138,31,0.09) 0%, transparent 70%),
+      radial-gradient(ellipse 45% 38% at 12% 18%, rgba(85,222,159,0.09) 0%, transparent 70%),
       radial-gradient(ellipse 80% 55% at 50% 25%, rgba(0,212,255,0.09) 0%, transparent 70%),
       radial-gradient(ellipse 35% 35% at 82% 78%, rgba(0,212,255,0.05) 0%, transparent 60%);
   }
@@ -164,10 +164,10 @@
     display: inline-flex; align-items: center; gap: 8px;
     margin: 0 auto 20px;
     padding: 8px 16px;
-    border: 0.5px solid rgba(255,138,31,0.42);
+    border: 0.5px solid rgba(85,222,159,0.42);
     border-radius: 999px;
-    background: rgba(255,138,31,0.08);
-    color: #ffb66b;
+    background: rgba(85,222,159,0.08);
+    color: #8af2bb;
     font-size: 13px;
     font-weight: 800;
   }
@@ -282,14 +282,14 @@
   .price-card:hover { border-color: rgba(0,212,255,0.35); transform: translateY(-2px); }
   .price-card.pop { border-color: var(--signal); background: #071b20; }
   .price-card.offer {
-    border-color: rgba(255,138,31,0.45);
-    box-shadow: inset 0 0 0 1px rgba(255,138,31,0.04);
+    border-color: rgba(85,222,159,0.45);
+    box-shadow: inset 0 0 0 1px rgba(85,222,159,0.04);
   }
   .price-card.offer::before {
-    content: "Halloween Days";
+    content: "Black Friday";
     position: absolute; top: 11px; right: -34px;
     width: 132px; transform: rotate(34deg);
-    background: var(--halloween);
+    background: var(--offer-accent);
     color: #111; font-size: 9px; font-weight: 900; text-transform: uppercase;
     letter-spacing: 0.08em; padding: 3px 0;
   }
@@ -303,8 +303,8 @@
     margin: 0 0 9px;
     padding: 3px 9px;
     border-radius: 999px;
-    background: var(--halloween-soft);
-    color: #ffb66b;
+    background: var(--offer-accent-soft);
+    color: #8af2bb;
     font-size: 10px;
     font-weight: 900;
     text-transform: uppercase;
@@ -318,18 +318,18 @@
     text-decoration: line-through;
     margin-bottom: 2px;
   }
-  .price-card.offer .p-amount { color: #ffb66b; }
+  .price-card.offer .p-amount { color: #8af2bb; }
   .p-unit { font-size: 13px; font-weight: 700; letter-spacing: 0; color: var(--signal); }
   .p-days { font-size: 13px; color: rgba(255,255,255,0.52); }
-  .p-save { margin-top: 8px; color: #ffb66b; font-size: 12px; font-weight: 800; }
+  .p-save { margin-top: 8px; color: #8af2bb; font-size: 12px; font-weight: 800; }
   .offer-panel {
     margin: 0 0 26px;
     padding: 22px 24px;
     border-radius: var(--radius);
     background:
-      linear-gradient(135deg, rgba(255,138,31,0.13), rgba(0,212,255,0.04)),
+      linear-gradient(135deg, rgba(85,222,159,0.13), rgba(0,212,255,0.04)),
       #090909;
-    border: 0.5px solid rgba(255,138,31,0.32);
+    border: 0.5px solid rgba(85,222,159,0.32);
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 18px;
@@ -337,12 +337,12 @@
   }
   .offer-panel h3 { font-size: 20px; letter-spacing: -0.4px; margin-bottom: 4px; }
   .offer-panel p { color: rgba(255,255,255,0.62); font-size: 14px; margin: 0; }
-  .offer-panel strong { color: #ffb66b; }
+  .offer-panel strong { color: #8af2bb; }
   .offer-panel .offer-percent {
     font-size: clamp(34px, 5vw, 54px);
     line-height: 1;
     font-weight: 900;
-    color: #ffb66b;
+    color: #8af2bb;
     letter-spacing: -2px;
     white-space: nowrap;
   }
@@ -562,7 +562,7 @@
   "name": "Starlink Mini Op Pad",
   "areaServed": "Europa",
   "description": "Starlink Mini verhuur voor vakantie, camper, boot, events en remote werken.",
-  "priceRange": "Vanaf €7 per dag",
+  "priceRange": "Black Friday: €4,50 per dag bij 4 weken",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Almere",
@@ -613,7 +613,7 @@
     <p class="hero-sub">
       Geen trage campingwifi. Geen duur roaming. Geen gedoe. Neem onze Starlink Mini mee en geniet van razendsnel, betrouwbaar internet — op de camping, het water of hoog in de bergen.
     </p>
-    <div class="offer-chip">Halloween Days · tijdelijk 50% korting vanaf 2 weken</div>
+    <div class="offer-chip">Black Friday · tijdelijk 40% korting vanaf 2 weken</div>
     <div class="speed-tag">⚡ Tot 300+ Mbps · Unlimited · 40+ landen</div>
     <div class="hero-buttons">
       <a href="#reserveer" class="btn-primary">Reserveer jouw set →</a>
@@ -779,12 +779,12 @@
     <h2 class="s-title">Langer meenemen =<br>meer besparen</h2>
     <p class="s-sub">Alle tarieven zijn inclusief actief Europees netwerk met unlimited data en het volledige pakket. Borg: €250 (retour na inlevering).</p>
 
-    <div class="offer-panel" aria-label="Tijdelijke Halloween Days aanbieding">
+    <div class="offer-panel" aria-label="Tijdelijke Black Friday aanbieding">
       <div>
-        <h3>Halloween Days: langer weg, halve dagprijs</h3>
-        <p>De komende maand krijg je <strong>50% korting</strong> op het dagtarief bij 2, 3 en 4 weken huren en op iedere extra week. De 1 week-prijs blijft ongewijzigd.</p>
+        <h3>Black Friday: 40% korting op je dagtarief</h3>
+        <p>Tijdens de actie krijg je <strong>40% korting</strong> op het dagtarief bij 2, 3 en 4 weken huren en op elke verlengingsweek na week 4. Eén week kost €91.</p>
       </div>
-      <div class="offer-percent">-50%</div>
+      <div class="offer-percent">-40%</div>
     </div>
 
     <div class="speed-block">
@@ -801,41 +801,41 @@
         <div class="p-days">€91 voor 7 dagen</div>
       </div>
       <div class="price-card offer">
-        <div class="offer-badge">50% korting</div>
+        <div class="offer-badge">40% korting</div>
         <div class="p-label">2 weken</div>
         <div class="p-old">was €10 / dag</div>
-        <div class="p-amount">€5 <span class="p-unit">/ dag</span></div>
-        <div class="p-days">€70 voor 14 dagen</div>
-        <div class="p-save">Je bespaart €70</div>
+        <div class="p-amount">€6 <span class="p-unit">/ dag</span></div>
+        <div class="p-days">€84 voor 14 dagen</div>
+        <div class="p-save">Je bespaart €56</div>
       </div>
       <div class="price-card pop offer">
         <div class="pop-badge">⭐ Populairste keuze</div>
-        <div class="offer-badge">50% korting</div>
+        <div class="offer-badge">40% korting</div>
         <div class="p-label">3 weken</div>
         <div class="p-old">was €9 / dag</div>
-        <div class="p-amount">€4,50 <span class="p-unit">/ dag</span></div>
-        <div class="p-days">€94,50 voor 21 dagen</div>
-        <div class="p-save">Je bespaart €94,50</div>
+        <div class="p-amount">€5,40 <span class="p-unit">/ dag</span></div>
+        <div class="p-days">€113,40 voor 21 dagen</div>
+        <div class="p-save">Je bespaart €75,60</div>
       </div>
       <div class="price-card offer">
-        <div class="offer-badge">50% korting</div>
+        <div class="offer-badge">40% korting</div>
         <div class="p-label">4 weken</div>
         <div class="p-old">was €7,50 / dag</div>
-        <div class="p-amount">€3,75 <span class="p-unit">/ dag</span></div>
-        <div class="p-days">€105 voor 28 dagen</div>
-        <div class="p-save">Je bespaart €105</div>
+        <div class="p-amount">€4,50 <span class="p-unit">/ dag</span></div>
+        <div class="p-days">€126 voor 28 dagen</div>
+        <div class="p-save">Je bespaart €84</div>
       </div>
       <div class="price-card offer">
-        <div class="offer-badge">50% korting</div>
+        <div class="offer-badge">40% korting</div>
         <div class="p-label">Extra week</div>
         <div class="p-old">was €7 / dag</div>
-        <div class="p-amount">€3,50 <span class="p-unit">/ dag</span></div>
-        <div class="p-days">€24,50 per extra week</div>
-        <div class="p-save">Je bespaart €24,50</div>
+        <div class="p-amount">€4,20 <span class="p-unit">/ dag</span></div>
+        <div class="p-days">€29,40 per extra week</div>
+        <div class="p-save">Je bespaart €19,60</div>
       </div>
     </div>
     <div class="price-footer">
-      <span>Halloween Days: <strong>50% korting vanaf 2 weken</strong></span>
+      <span>Black Friday: <strong>40% korting vanaf 2 weken</strong></span>
       <span>Borg: <strong>€250</strong> (retour)</span>
       <span>Bezorging optioneel: <strong>+€25</strong></span>
       <span>Minimale periode: <strong>1 week</strong></span>
@@ -920,9 +920,9 @@
             <select id="fPeriod" onchange="updateSummary()">
               <option value="">Kies je periode</option>
               <option value="1wk|91">1 week — €13/dag — €91 totaal</option>
-              <option value="2wk|70|Halloween Days">2 weken — actie €5/dag — €70 totaal</option>
-              <option value="3wk|94.50|Halloween Days">3 weken — actie €4,50/dag — €94,50 totaal</option>
-              <option value="4wk|105|Halloween Days">4 weken — actie €3,75/dag — €105 totaal</option>
+              <option value="2wk|84|Black Friday">2 weken — actie €6/dag — €84 totaal</option>
+              <option value="3wk|113.4|Black Friday">3 weken — actie €5,40/dag — €113,40 totaal</option>
+              <option value="4wk|126|Black Friday">4 weken — actie €4,50/dag — €126 totaal</option>
             </select>
           </div>
           <div class="ff">
@@ -971,7 +971,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Kan ik de periode verlengen als ik langer weg wil? <span class="arr">+</span></button>
-        <div class="faq-a">Ja, verlengen is vrijwel altijd mogelijk als de set nog beschikbaar is. Tijdens de Halloween Days kost elke extra week na week 4 €24,50 (€3,50 per dag), in plaats van €49 (€7 per dag). Neem tijdig contact op via WhatsApp — dan passen we de boeking aan.</div>
+        <div class="faq-a">Ja, verlengen is vrijwel altijd mogelijk als de set nog beschikbaar is. Tijdens de Black Friday kost elke extra week na week 4 €29,40 (€4,20 per dag), in plaats van €49 (€7 per dag). Neem tijdig contact op via WhatsApp — dan passen we de boeking aan.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Hoe werkt de 12V auto-aansluiting? <span class="arr">+</span></button>
@@ -1036,7 +1036,7 @@ function closeMobileNav() {
 // ── CALENDAR ───────────────────────────────────────
 const MONTHS = ['Januari','Februari','Maart','April','Mei','Juni','Juli','Augustus','September','Oktober','November','December'];
 const DDAYS = ['Ma','Di','Wo','Do','Vr','Za','Zo'];
-const OFFER_LABEL = 'Halloween Days';
+const OFFER_LABEL = 'Black Friday';
 let curDate = new Date();
 let selStart = null, selEnd = null;
 let blocked = [];
@@ -1280,7 +1280,7 @@ function updateSummary() {
   }
   const limited=selStart && hasLimitedAvailability(selStart,selEnd);
   const limitedNotice=limited?'<br><strong style="color:#ffbf61">Beperkte beschikbaarheid: je aanvraag is pas definitief na onze bevestiging.</strong>':'';
-  const offerNotice=offer?`<br><strong style="color:#ffb66b">${OFFER_LABEL}: actieprijs is toegepast.</strong>`:'';
+  const offerNotice=offer?`<br><strong style="color:#8af2bb">${OFFER_LABEL}: actieprijs is toegepast.</strong>`:'';
   box.innerHTML=`<strong style="color:white">Jouw reservering</strong><br>
 Periode: ${dur} · Start: ${startStr}${endStr}<br>
 Tarief: €${formatEuro(price)}${dc?' + €'+formatEuro(dc)+' bezorging':''}<br>
